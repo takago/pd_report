@@ -1,0 +1,23 @@
+%#! platex  -halt-on-error -file-line-error -src-specials main.tex
+% Time-stamp: <2016-12-14 20:09:01 takago>
+
+
+\documentclass[a4paper,dvipdfmx]{jreport}
+\usepackage{takagolab}	% 鷹合研の設定
+\begin{document}
+
+\input{title.tex} %タイトル
+\input{abstract.tex}  % アブストラクト
+\input{alloc.tex} % 活動履歴と作業分担
+\input{toc.tex}   % 目次、図目次、表目次、ソースリスト目次
+
+\input{chap1.tex} % 1章
+\input{chap2.tex} % 2章
+\input{chap3.tex} % 3章
+\input{chap4.tex} % 4章
+\input{chap5.tex} % 5章
+
+\input{bibliography.tex} % 参考文献
+\input{appendix.tex}     % 付録
+
+\end{document}

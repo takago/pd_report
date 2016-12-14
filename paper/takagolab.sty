@@ -1,0 +1,82 @@
+%% 新しいhyperrefとifxetexが必要です。 %%
+% 日本語可能なしおりにする
+\usepackage{atbegshi}
+ \ifnum 42146=\euc"A4A2 
+ \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+ \else
+ \AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+ \fi
+\usepackage[%
+a4paper,%
+%dvipdfm,%
+%pdftitle={桃太郎},%
+%pdfsubject={鬼が島のその後},%
+%pdfauthor={イングリッド・バーグマン，小泉 太郎},%
+%pdfkeywords={ウェーブレット変換，直交変換，}%
+pdfstartview={FitH -32768},%    描画領域の幅に合わせる
+bookmarks=true,%                しおり付き
+bookmarksnumbered=true,%        章や節の番号をふる
+bookmarkstype=toc,%             目次情報のファイル.tocを参照
+colorlinks=true,%              ハイパーリンクを色枠に
+linkcolor=black,%
+urlcolor=black,%
+citecolor=black,%
+filecolor=black,%
+menucolor=black,%
+pagecolor=black,%
+]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{longtable}
+\usepackage{graphicx}
+%%%%%%%%%%%%%% マージン設定 %%%%%%%%%%%%%%
+\oddsidemargin=0in
+\topmargin=-1cm
+\headheight=0in
+\headsep=0in
+\textwidth=6.5in
+\textheight=10in
+\doublerulesep=\arrayrulewidth
+\setcounter{topnumber}{10}
+\setcounter{bottomnumber}{10}
+\setcounter{totalnumber}{20}
+\renewcommand{\topfraction}{1}
+\renewcommand{\bottomfraction}{1}
+\renewcommand{\textfraction}{0}
+\renewcommand{\floatpagefraction}{1}
+%%%%%%%%%%%%%% LISTINGS %%%%%%%%%%%%%%%%%%%%%
+\usepackage{color,listings,jlisting}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.545}
+\definecolor{darkgreen}{rgb}{0.0, 0.392, 0.0}
+\definecolor{brown}{rgb}{ 0.647, 0.165, 0.165}
+\lstset{%
+language={C},
+%backgroundcolor={\color[gray]{.98}},%
+basicstyle={\small\ttfamily},%
+identifierstyle={\bfseries\color{darkblue}},%
+commentstyle={\color{brown}},%
+keywordstyle={\bfseries\color{darkgreen}},%
+%numberstyle={\bfseries},
+%ndkeywordstyle={\bfseries},%
+%stringstyle={\bfseries},
+%frame={lrtb},
+frame={tb},
+%frame=single,
+breaklines=true,
+columns=[l]{fullflexible},%
+numbers=left,%
+xrightmargin=0zw,%
+xleftmargin=3zw,%
+stepnumber=1,
+tabsize=4,
+framesep=5pt,
+numbersep=1zw,%
+lineskip=-0.5ex%
+}
+\def\lstlistingname{リスト}
+\def\lstlistlistingname{ソースリスト目次}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 数式中にコメントをいれられるようにする\
+\usepackage{amsmath,amssymb,bm}
+\newcommand{\B}[1]{\quad(\because\ \text{#1)}}
+\newcommand{\C}[1]{\quad\cdots\text{#1}}
+%
