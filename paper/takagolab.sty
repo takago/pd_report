@@ -29,12 +29,7 @@ pagecolor=black,%
 \usepackage{longtable}
 \usepackage{graphicx}
 %%%%%%%%%%%%%% マージン設定 %%%%%%%%%%%%%%
-\oddsidemargin=0in
-\topmargin=-1cm
-\headheight=0in
-\headsep=0in
-\textwidth=6.5in
-\textheight=10in
+\usepackage[top=15truemm,bottom=15truemm,left=20truemm,right=20truemm]{geometry}
 \doublerulesep=\arrayrulewidth
 \setcounter{topnumber}{10}
 \setcounter{bottomnumber}{10}
@@ -44,7 +39,8 @@ pagecolor=black,%
 \renewcommand{\textfraction}{0}
 \renewcommand{\floatpagefraction}{1}
 %%%%%%%%%%%%%% LISTINGS %%%%%%%%%%%%%%%%%%%%%
-\usepackage{color,listings,jlisting}
+\usepackage{caption}% これがないとlistingのキャプションが乱れることがある
+\usepackage{color,listings,plistings}
 \definecolor{darkblue}{rgb}{0.0, 0.0, 0.545}
 \definecolor{darkgreen}{rgb}{0.0, 0.392, 0.0}
 \definecolor{brown}{rgb}{ 0.647, 0.165, 0.165}
