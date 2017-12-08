@@ -8,6 +8,7 @@ all:
 	cp paper/main.pdf paper.pdf
 	cp paperback/main.pdf paperback.pdf
 	cp presen/main.pdf presen.pdf
+	cp presen/main-nup.pdf presen-nup.pdf
 
 clean:
 	find . -name "*~" | xargs rm -f

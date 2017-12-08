@@ -1,11 +1,11 @@
 all:
-	ptex2pdf -s -l -ot '-synctex=1 -halt-on-error -file-line-error' main.tex
-pdf:
-	ptex2pdf -l -ot '-synctex=1 -halt-on-error -file-line-error' main.tex
+	latexmk
+pdf: all
+	dvipdfmx -v -O 3 main.dvi
 clean:
-	rm -fr qt_temp.* *.synctex.gz *~ *.aux *.log *.dvi
+	latexmk -c
 distclean:
-	rm -fr main.pdf
+	latexmk -C
 
 
 
