@@ -1,13 +1,8 @@
 %% 新しいhyperrefとifxetexが必要です。 %%
 % 日本語可能なしおりにする
-\usepackage{atbegshi}
- \ifnum 42146=\euc"A4A2 
- \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
- \else
- \AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
- \fi
+
 \usepackage[%
-a4paper,%
+%a4paper,%
 %dvipdfm,%
 %pdftitle={桃太郎},%
 %pdfsubject={鬼が島のその後},%
@@ -23,8 +18,9 @@ urlcolor=black,%
 citecolor=black,%
 filecolor=black,%
 menucolor=black,%
-pagecolor=black,%
+%pagecolor=black,%
 ]{hyperref}
+\usepackage{pxjahyper}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{longtable}
 \usepackage{graphicx}
@@ -76,3 +72,5 @@ lineskip=-0.5ex%
 \newcommand{\B}[1]{\quad(\because\ \text{#1)}}
 \newcommand{\C}[1]{\quad\cdots\text{#1}}
 %
+\usepackage{txfonts}
+\usepackage[deluxe]{otf}

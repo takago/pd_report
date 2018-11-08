@@ -8,7 +8,7 @@
 %ここから ------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tkglabs}[2017/12/05]
-\LoadClass[dvipdfmx,9pt,twoside]{jsarticle} %% ベースにするクラス
+\LoadClass[dvipdfmx,9pt,twoside,uplatex]{jsarticle} %% ベースにするクラス
 % ここまで -----------------------------------------------------------------
 
 
@@ -55,7 +55,7 @@
 %                       フォントの設定
 %ここから ------------------------------------------------------------------
 \usepackage{txfonts}
-\usepackage[expert, deluxe]{otf}
+%\usepackage[expert, deluxe]{otf} % 使えない？
 % ここまで -----------------------------------------------------------------
 
 

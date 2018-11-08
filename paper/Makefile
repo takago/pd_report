@@ -1,8 +1,6 @@
 all:
-	latexmk
-pdf: all
-	dvipdfmx -v -O 3 main.dvi
+	ptex2pdf -u -l -ot '-synctex=1 -halt-on-error -file-line-error' main.tex
 clean:
-	latexmk -c
-distclean:
-	latexmk -C
+	rm -f *.aux *.dvi *.idx *.ilg *.ind *.log *.out *.toc *.fls *.lot *.lol *.lof *.synctex.gz *.fdb_latexmk 
+distclean: clean
+	rm -f main.pdf

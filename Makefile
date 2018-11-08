@@ -1,14 +1,14 @@
 CWD	= `pwd`
 all:
-	make pdf -C abstract
-	make pdf -C paper
-	make pdf -C paperback
-	make pdf -C presen
-	cp abstract/main.pdf abstract.pdf
-	cp paper/main.pdf paper.pdf
-	cp paperback/main.pdf paperback.pdf
-	cp presen/main.pdf presen.pdf
-	cp presen/main-nup.pdf presen-nup.pdf
+	make -C abstract
+	make -C paper
+	make -C paperback
+	make -C presen
+	mv abstract/main.pdf abstract.pdf
+	mv paper/main.pdf paper.pdf
+	mv paperback/main.pdf paperback.pdf
+	mv presen/main.pdf presen.pdf
+	mv presen/main-nup.pdf presen-nup.pdf
 
 clean:
 	find . -name "*~" | xargs rm -f
