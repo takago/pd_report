@@ -1,12 +1,69 @@
 %#! platex  -halt-on-error -file-line-error -src-specials main.tex
-% Time-stamp: <2018-11-09 01:33:08 takago>
+% Time-stamp: <2018-11-09 02:46:17 takago>
 
 \documentclass[25pt,landscape,dvipdfmx,uplatex]{foils}
-\usepackage{txfonts}
 \usepackage[deluxe]{otf}
-\usepackage{color}
+
+%\usepackage{txfonts}
+% Latin Modern Fontを使うとき
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{tikz}
+\usepackage[symbol]{footmisc}
+\usepackage{xcolor,listings, plistings}
+\usepackage{multicol}
+\usepackage{url}
 \usepackage{graphicx}
+\usepackage{epsfig}
 \usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{lastpage}
+\usepackage{ascmac}
+\usepackage{fancybox,fancyvrb,okumacro}
+
+\renewcommand{\lstlistingname}{リスト} 
+\usepackage[%
+pdfstartview={FitH -32768},%    描画領域の幅に合わせる
+bookmarks=true,%                しおり付き
+bookmarksnumbered=true,%        章や節の番号をふる
+bookmarkstype=toc,%             目次情報のファイル.tocを参照
+colorlinks=true,%              ハイパーリンクを色枠に
+linkcolor=black,%
+urlcolor=black,%
+citecolor=black,%
+filecolor=black,%
+menucolor=black,%
+pagecolor=black,%
+]{hyperref}
+\lstset{%
+	language={Python}, 
+	backgroundcolor={\color[gray]{.95}},%
+	basicstyle={\ttfamily\small},%
+	identifierstyle={\ttfamily\small},
+	commentstyle={\ttfamily\small\color{red}},
+	keywordstyle={\ttfamily\small\color{blue}},
+	ndkeywordstyle={},%
+	stringstyle={\ttfamily\small\color[rgb]{0,0.5,0}},
+	frame={tb},
+	breaklines=true,
+    columns=[l]{fullflexible},
+%	columns=[l]{fixed},%　fixed だと開きすぎ
+	basewidth=0.5em,   % これないと行頭のスペースが揃わない
+	numbers=left,%
+	xrightmargin=0zw,%
+	xleftmargin=3zw,%
+	numberstyle={\ttfamily\small},%
+	tabsize=3,
+	stepnumber=1, 
+	numbersep=0.75zw,%
+	lineskip=-0.3ex,%
+	belowcaptionskip=3pt,   % これないと見出しとリスト本体に隙間が毎回変わる
+	abovecaptionskip=0pt,
+	captionpos=t,
+	showstringspaces=false, % 半角スペースを記号で表示しない
+}
+
 %
 \special{papersize=297mm,210mm}  % papersize=width, height
 %
