@@ -1,4 +1,5 @@
-CWD	= `pwd`
+CWD =  $(shell basename `pwd`) 
+BACKUP = pd3repo-`date -I`.tar.gz
 all:
 	make -C abstract
 	make -C paper
@@ -25,7 +26,7 @@ distclean:
 	make distclean -C paperback
 	make distclean -C presen	
 
-backup: all distclean
-	@cd ..;\
-	tar cvfz "thesis`date -I`.tar.gz" thesis
-	@echo バックアップをとりました．
+backup: distclean
+	@echo "クリーニング完了"
+	@cd ..;	tar cz --exclude-vcs -f ${BACKUP} ${CWD}
+	@echo "アーカイブ生成：${BACKUP}"
