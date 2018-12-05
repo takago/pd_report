@@ -1,0 +1,89 @@
+%
+% このファイルは書き換えないで下さい
+%
+\documentclass[25pt, landscape,dvipdfmx, oneside, uplatex]{foils}
+
+% 4:3のスクリーン(8号館)
+\usepackage[top=15truemm,bottom=22truemm,left=15truemm,right=15truemm,paperwidth=300truemm,paperheight=225truemm]{geometry}
+
+% 16:9のスクリーン(23号館)
+%\usepackage[top=15truemm,bottom=22truemm,left=15truemm,right=15truemm,paperwidth=320truemm,paperheight=180truemm]{geometry}
+\setlength{\foilheadskip}{0mm}
+\setlength{\parindent}{0mm}
+
+\usepackage[deluxe]{otf}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\renewcommand{\kanjifamilydefault}{\gtdefault}  % 日本語フォントをゴシックに
+\mathversion{bold} % 数式フォントを太字に変更する
+
+
+\usepackage{bbding} % \PencilRightDown 鉛筆マーク
+\usepackage{tikz}
+\usepackage[symbol]{footmisc}
+\usepackage{xcolor,listings, plistings}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{epsfig}
+
+\usepackage{enumerate}
+\usepackage{lastpage}
+\usepackage{ascmac}
+\usepackage{fancybox,fancyvrb,okumacro}
+
+\renewcommand{\lstlistingname}{List} 
+\usepackage[%
+pdfstartview={FitH -32768},%    描画領域の幅に合わせる
+bookmarks=true,%                しおり付き
+bookmarksnumbered=true,%        章や節の番号をふる
+bookmarkstype=toc,%             目次情報のファイル.tocを参照
+colorlinks=true,%              ハイパーリンクを色枠に
+linkcolor=black,%
+urlcolor=black,%
+citecolor=black,%
+filecolor=black,%
+menucolor=black,%
+pagecolor=black,%
+]{hyperref}
+\lstset{%
+	language={Python}, 
+	backgroundcolor={\color[gray]{.95}},%
+	basicstyle={\ttfamily\small},%
+	identifierstyle={\ttfamily\small},
+	commentstyle={\ttfamily\small\color{red}},
+	keywordstyle={\ttfamily\small\color{blue}},
+	ndkeywordstyle={},%
+	stringstyle={\ttfamily\small\color[rgb]{0,0.5,0}},
+	frame={tb},
+	breaklines=true,
+    columns=[l]{fullflexible},
+%	columns=[l]{fixed},%　fixed だと開きすぎ
+	basewidth=0.5em,   % これないと行頭のスペースが揃わない
+	numbers=left,%
+	xrightmargin=0zw,%
+	xleftmargin=3zw,%
+	numberstyle={\ttfamily\small},%
+	tabsize=3,
+	stepnumber=1, 
+	numbersep=0.75zw,%
+	lineskip=-0.3ex,%
+	belowcaptionskip=3pt,   % これないと見出しとリスト本体に隙間が毎回変わる
+	abovecaptionskip=0pt,
+	captionpos=t,
+	showstringspaces=false, % 半角スペースを記号で表示しない
+}
+%
+
+%%%%%%%%%%%% fboxの線幅
+\setlength{\fboxrule}{1.5pt}
+
+
+
+%%%%%%%%%%%% ページフッタの設定 %%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}  % これを入れないと2ページのフッタがずれる
+\renewcommand{\headrulewidth}{0pt} % 水平線を消去
+\renewcommand{\footrulewidth}{0pt} % 水平線を消去
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
