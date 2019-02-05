@@ -1,13 +1,15 @@
 %#! platex  -halt-on-error -file-line-error -src-specials main.tex
 % Time-stamp: <2018-11-09 11:18:57 takago>
 
-\documentclass[a4paper,dvipdfmx,uplatex,report]{jsbook}
+\documentclass[a4paper,dvipdfmx,uplatex]{jsbook} % 章の始まりは右側のページからとする
+%\documentclass[a4paper,dvipdfmx,uplatex,report]{jsbook} % 余白ページを取らない
+
 \usepackage{takagolab}	% 鷹合研の設定
 \begin{document}
 \input{title.tex} %タイトル
 \input{abstract.tex}  % アブストラクト
 \input{alloc.tex} % 活動履歴と作業分担
-\input{toc.tex}   % 目次、図目次、表目次、ソースリスト目次
+\input{toc.tex}   % 目次，図目次，表目次，ソースリスト目次
 
 \input{chap1.tex} % 1章
 \input{chap2.tex} % 2章

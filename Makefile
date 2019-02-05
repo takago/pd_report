@@ -5,6 +5,7 @@ all:
 	make -C paper
 	make -C paperback
 	make -C presen
+	make -C presen nup
 	mv abstract/main.pdf abstract.pdf
 	mv paper/main.pdf paper.pdf
 	mv paperback/main.pdf paperback.pdf

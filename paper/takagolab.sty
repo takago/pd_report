@@ -37,32 +37,43 @@ menucolor=black,%
 %%%%%%%%%%%%%% LISTINGS %%%%%%%%%%%%%%%%%%%%%
 \usepackage{caption}% これがないとlistingのキャプションが乱れることがある
 \usepackage{color,listings,plistings}
-\definecolor{darkblue}{rgb}{0.0, 0.0, 0.545}
-\definecolor{darkgreen}{rgb}{0.0, 0.392, 0.0}
-\definecolor{brown}{rgb}{ 0.647, 0.165, 0.165}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.545}
+\definecolor{darkgreen}{rgb}{0.0,0.392,0.0}
+\definecolor{brown}{rgb}{0.647,0.165,0.165}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\definecolor{gray2}{rgb}{0.15,0.15,0.15}
+\definecolor{darkgray}{rgb}{0.05,0.05,0.05}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.545}
+\definecolor{darkgreen}{rgb}{0.0,0.392,0.0}
+\definecolor{brown}{rgb}{0.647,0.165,0.165}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
 \lstset{%
-language={C},
-%backgroundcolor={\color[gray]{.98}},%
-basicstyle={\small\ttfamily},%
-identifierstyle={\bfseries\color{darkblue}},%
-commentstyle={\color{brown}},%
-keywordstyle={\bfseries\color{darkgreen}},%
-%numberstyle={\bfseries},
-%ndkeywordstyle={\bfseries},%
-%stringstyle={\bfseries},
-%frame={lrtb},
-frame={tb},
-%frame=single,
-breaklines=true,
-columns=[l]{fullflexible},%
-numbers=left,%
-xrightmargin=0zw,%
-xleftmargin=3zw,%
-stepnumber=1,
-tabsize=4,
-framesep=5pt,
-numbersep=1zw,%
-lineskip=-0.5ex%
+	% language={C}, 
+	% backgroundcolor={\color[gray]{.97}},%
+	basicstyle={\small \ttfamily},%
+	identifierstyle={\ttfamily\color{darkblue}},
+	commentstyle={\ttfamily\gtfamily\color{brown}},
+	keywordstyle={\ttfamily\color{darkgreen}},
+	ndkeywordstyle={},%
+	stringstyle={\ttfamily},
+	frame={tb},
+	breaklines=true,
+	columns=[l]{fullflexible},
+	%	columns=[l]{fixed},%　fixed だと開きすぎ
+	basewidth=0.5em,   % これないと行頭のスペースが揃わない
+	numbers=left,%
+	xrightmargin=0zw,%
+	xleftmargin=3zw,%
+	numberstyle={\ttfamily\small},%
+	tabsize=2,
+	stepnumber=1, 
+	numbersep=1zw,%
+	lineskip=-.8ex,% 行間の設定
+	belowcaptionskip=2pt,   % これないと見出しとリスト本体に隙間が毎回変わる
+	abovecaptionskip=0pt,
+	captionpos=t,
+	showstringspaces=false, % 半角スペースを記号で表示しない
 }
 \def\lstlistingname{リスト}
 \def\lstlistlistingname{ソースリスト目次}
@@ -73,4 +84,4 @@ lineskip=-0.5ex%
 \newcommand{\C}[1]{\quad\cdots\text{#1}}
 %
 \usepackage{txfonts}
-\usepackage[deluxe]{otf}
+\usepackage[deluxe,uplatex]{otf}
