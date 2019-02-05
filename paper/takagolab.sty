@@ -50,13 +50,13 @@ menucolor=black,%
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \lstset{%
 	% language={C}, 
-	% backgroundcolor={\color[gray]{.97}},%
+	backgroundcolor={\color[gray]{.97}},%
 	basicstyle={\small \ttfamily},%
-	identifierstyle={\ttfamily\color{darkblue}},
+	identifierstyle={\ttfamily\small},
 	commentstyle={\ttfamily\gtfamily\color{brown}},
 	keywordstyle={\ttfamily\color{darkgreen}},
 	ndkeywordstyle={},%
-	stringstyle={\ttfamily},
+	stringstyle={\ttfamily\small\color{darkblue}},
 	frame={tb},
 	breaklines=true,
 	columns=[l]{fullflexible},
@@ -85,3 +85,5 @@ menucolor=black,%
 %
 \usepackage{txfonts}
 \usepackage[deluxe,uplatex]{otf}
+
+\usepackage{fancyvrb}
