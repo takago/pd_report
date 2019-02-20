@@ -37,9 +37,6 @@
 %                       2段組と図表の設定
 %ここから ------------------------------------------------------------------
 \usepackage{multicol,caption}
-%図表のキャプションフォーマットの変更
-\captionsetup[figure]{labelsep=space, name=Fig.}
-\captionsetup[table]{labelsep=space, name=Table}
 % Figure環境の登録
 \newenvironment{Figure}
 {\par\medskip\noindent\minipage{\linewidth}}
@@ -151,8 +148,45 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       キャプションの変更
+% 
+% http://nabew.blog113.fc2.com/blog-entry-18.html を引用
+%
+%ここから ------------------------------------------------------------------
+\makeatletter  % プリアンブルに書く場合は必要
+\def\fnum@Jfigure{図} 
+\def\fnum@Efigure{Fig.} 
+\def\fnum@Jtable{表} 
+\def\fnum@Etable{Table} 
 
+\long\def\@emakecaption#1#2{%
+%% \vskip\abovecaptionskip
+  \iftdir\sbox\@tempboxa{#1\hskip1zw#2}%
+    \else\sbox\@tempboxa{#1: #2}%
+  \fi
+  \ifdim \wd\@tempboxa >\hsize
+    \iftdir #1\hskip1zw#2\relax\par
+      \else #1: #2\relax\par\fi
+  \else
+    \global \@minipagefalse
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
 
+\long\def\@caption#1[#2]#3#4{%
+  \par
+  \addcontentsline{\csname ext@#1\endcsname}{#1}%
+    {\protect\numberline{\csname the#1\endcsname}{\ignorespaces #2}}%
+  \begingroup
+    \@parboxrestore
+    \if@minipage
+      \@setminipage
+    \fi
+    \normalsize
+    \@makecaption{\csname fnum@J\@captype\endcsname \csname the\@captype\endcsname}{\ignorespaces #3}\par\vspace{-2mm}
+    \@emakecaption{\csname fnum@E\@captype\endcsname \csname the\@captype\endcsname}{\ignorespaces #4}\par\vspace{1mm}
+ \endgroup}
 
-
-
+\makeatother  % プリアンブルに書く場合は必要
+% ここまで ------------------------------------------------------------------
