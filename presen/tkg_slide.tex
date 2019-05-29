@@ -1,15 +1,36 @@
-%
-% このファイルは書き換えないで下さい
-%
 \documentclass[25pt, landscape,dvipdfmx, oneside, uplatex]{foils}
 
-% 4:3のスクリーン(8号館)
+
+
+% 4:3のスクリーン(8号館)の場合
 \usepackage[top=15truemm,bottom=22truemm,left=15truemm,right=15truemm,paperwidth=300truemm,paperheight=225truemm]{geometry}
 
-% 16:9のスクリーン(23号館)
+% 16:9のスクリーン(23号館)の場合
 %\usepackage[top=15truemm,bottom=22truemm,left=15truemm,right=15truemm,paperwidth=320truemm,paperheight=180truemm]{geometry}
-\setlength{\foilheadskip}{0mm}
+
+
+
+% 箇条書き環境の余白設定
+\usepackage[shortlabels]{enumitem}
+% 以下は（必要に応じて調整）
+% \setlist[description]{topsep=3pt,parsep=0pt,partopsep=0pt,itemsep=2mm,leftmargin=1zw}
+% \setlist[enumerate]{topsep=3pt,parsep=0pt,partopsep=0pt,itemsep=2mm,leftmargin=1zw,labelsep=*}
+% \setlist[itemize]{topsep=3pt,parsep=0pt,partopsep=0pt,itemsep=2pt,leftmargin=1zw}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% ここから下は書き換えない
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% スライドの見出しの位置
+\setlength{\foilheadskip}{-14mm}
+
+% スライドなので字下げしない
 \setlength{\parindent}{0mm}
+
+
 
 \usepackage[deluxe,uplatex]{otf}
 \usepackage[T1]{fontenc}
@@ -27,7 +48,6 @@
 \usepackage{graphicx}
 \usepackage{epsfig}
 
-\usepackage{enumerate}
 \usepackage{lastpage}
 \usepackage{ascmac}
 \usepackage{fancybox,fancyvrb,okumacro}
