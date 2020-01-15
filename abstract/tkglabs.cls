@@ -19,6 +19,7 @@
 \usepackage[dvipdfmx]{graphicx} % 図の挿入
 \usepackage{multirow} % 表における縦方向の連結
 \usepackage{arydshln} % 表における点線
+\renewcommand{\baselinestretch}{0.9} % 行間のつめ具合
 \usepackage{url}      % URLの挿入
 % ここまで -----------------------------------------------------------------
 
@@ -119,7 +120,7 @@
 \begin{tabular}{|p{2cm};{1pt/1pt}p{2cm}|}\hline \hfil テーマ番号 \hfil& \hfil\THEMEID\hfil\\\hline\end{tabular}
 \fi
 \newline
-\vspace{-11\lineskip}
+\vspace{-10.3\lineskip} % プロジェクトテーマ番号の箱の位置
 \newline
 \noindent
 \begin{tabular}{|c;{1pt/1pt}c;{1pt/1pt}c|c;{1pt/1pt}c|}
@@ -160,6 +161,7 @@
 \def\fnum@Jtable{表} 
 \def\fnum@Etable{Table} 
 
+%% キャプション設定1
 \long\def\@emakecaption#1#2{%
 %% \vskip\abovecaptionskip
   \iftdir\sbox\@tempboxa{#1\hskip1zw#2}%
@@ -174,6 +176,7 @@
   \fi
   \vskip\belowcaptionskip}
 
+%% キャプション設定2
 \long\def\@caption#1[#2]#3#4{%
   \par
   \addcontentsline{\csname ext@#1\endcsname}{#1}%
