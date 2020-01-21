@@ -1,3 +1,6 @@
+% !TeX root = main.tex
+
+
 %% 新しいhyperrefとifxetexが必要です。 %%
 % 日本語可能なしおりにする
 
@@ -25,7 +28,15 @@ menucolor=black,%
 \usepackage{longtable}
 \usepackage{graphicx}
 %%%%%%%%%%%%%% マージン設定 %%%%%%%%%%%%%%
-\usepackage[top=15truemm,bottom=15truemm,left=20truemm,right=20truemm]{geometry}
+% 両面印刷・かつファイルに閉じる用に調整
+
+
+\usepackage{tocloft}
+\usepackage{tocstyle}
+
+
+\usepackage[twoside,top=15truemm,bottom=15truemm,inner=30truemm,outer=20truemm]{geometry}
+
 \doublerulesep=\arrayrulewidth
 \setcounter{topnumber}{10}
 \setcounter{bottomnumber}{10}
@@ -34,6 +45,11 @@ menucolor=black,%
 \renewcommand{\bottomfraction}{1}
 \renewcommand{\textfraction}{0}
 \renewcommand{\floatpagefraction}{1}
+
+
+
+
+
 %%%%%%%%%%%%%% LISTINGS %%%%%%%%%%%%%%%%%%%%%
 \usepackage{caption}% これがないとlistingのキャプションが乱れることがある
 \usepackage{color,listings,plistings}
