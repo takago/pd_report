@@ -17,6 +17,7 @@
 
 \mainmatter %ここから本文（<--これないと目次のページがずれる？）
 \input{toc.tex}   % 目次，図目次，表目次，ソースリスト目次
+\setcounter{page}{1} % PDFが右ページから章が始まらないときは，0にする
 
 \input{chap1.tex} % 1章
 \input{chap2.tex} % 2章
