@@ -1,15 +1,16 @@
 % !TeX root = main.tex
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 新しいhyperrefとifxetexが必要です。 %%
 % 日本語可能なしおりにする
 
 \usepackage[%
 %a4paper,%
 %dvipdfm,%
-%pdftitle={桃太郎},%
+pdftitle={PD3レポート},%
 %pdfsubject={鬼が島のその後},%
-%pdfauthor={イングリッド・バーグマン，小泉 太郎},%
+pdfauthor={金沢工大，情報工，鷹合研},%
 %pdfkeywords={ウェーブレット変換，直交変換，}%
 pdfstartview={FitH -32768},%    描画領域の幅に合わせる
 bookmarks=true,%                しおり付き
@@ -27,14 +28,11 @@ menucolor=black,%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{longtable}
 \usepackage{graphicx}
+
 %%%%%%%%%%%%%% マージン設定 %%%%%%%%%%%%%%
 % 両面印刷・かつファイルに閉じる用に調整
-
-
 \usepackage{tocloft}
 \usepackage{tocstyle}
-
-
 \usepackage[twoside,top=15truemm,bottom=15truemm,inner=30truemm,outer=20truemm]{geometry}
 
 \doublerulesep=\arrayrulewidth
@@ -45,7 +43,6 @@ menucolor=black,%
 \renewcommand{\bottomfraction}{1}
 \renewcommand{\textfraction}{0}
 \renewcommand{\floatpagefraction}{1}
-
 
 
 
@@ -98,8 +95,15 @@ menucolor=black,%
 \usepackage{amsmath,amssymb,bm}
 \newcommand{\B}[1]{\quad(\because\ \text{#1)}}
 \newcommand{\C}[1]{\quad\cdots\text{#1}}
-%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% フォント
 \usepackage{txfonts}
 \usepackage[deluxe,uplatex]{otf}
-
+\usepackage{ascmac} %% \return
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Verbatim環境にデフォルト値をセット
 \usepackage{fancyvrb}
+\newenvironment{verbatimx}%
+{\Verbatim[frame=single,obeytabs,baselinestretch=.65,commandchars=\\\{\}]}%
+{\endVerbatim}%

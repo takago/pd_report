@@ -6,11 +6,8 @@
 %%% 作成： 金沢工大・情報工学科・鷹合研究室
 %%%-------------------------------------------------------------------------
 
-\documentclass[a4paper,dvipdfmx,uplatex,openright]{jsbook} % 章の始まりは右側のページからとする
-%\documentclass[a4paper,dvipdfmx,uplatex,report]{jsbook} % 余白ページを取らない
-
+\documentclass[a4paper,dvipdfmx,uplatex,openright]{jsbook}
 \usepackage{takagolab}	% 鷹合研の設定
-
 
 \begin{document}
 \input{title.tex} %タイトル
@@ -20,7 +17,6 @@
 
 \mainmatter %ここから本文（<--これないと目次のページがずれる？）
 \input{toc.tex}   % 目次，図目次，表目次，ソースリスト目次
-\setcounter{page}{1} % ページ番号初期化(奇数ページが右側に来ないときは0にするといい？)
 
 \input{chap1.tex} % 1章
 \input{chap2.tex} % 2章
@@ -29,7 +25,7 @@
 \input{chap5.tex} % 5章
 
 \input{bibliography.tex} % 参考文献
-
+\newpage
 \input{appendix.tex}     % 付録
 
 \end{document}
