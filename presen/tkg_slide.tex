@@ -105,3 +105,10 @@ pagecolor=black,%
 \renewcommand{\headrulewidth}{0pt} % 水平線を消去
 \renewcommand{\footrulewidth}{0pt} % 水平線を消去
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Verbatim環境にデフォルト値をセット
+\usepackage{fancyvrb}
+\newenvironment{verbatimx}%
+{\Verbatim[frame=single,obeytabs,baselinestretch=.65,commandchars=\\\{\}]}%
+{\endVerbatim}%
