@@ -5,27 +5,35 @@
 
 \input{tkg_slide.tex}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% トップスライドのロゴ画像の設定 
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\MyLogo{}
-%% \MyLogo{\includegraphics[height=1.1cm]{fig/logo/kit_landscape1.eps}}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
-% フッタ−の設定 
-%
+% タイトルスライドのロゴ画像
+% フッタ（左）
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\lfoot{\small 鷹合研}
-%\lfoot{\includegraphics[height=.75cm]{fig/logo/kit_landscape1.eps}} % 各スライドのロゴ画像
+\iffalse 
+% ↑iftrueに書き換えると，スライドにロゴ画像が挿入される
+\MyLogo{\includegraphics[height=1.1cm]{fig/logo/kit_landscape1.eps}}
+\lfoot{\includegraphics[height=.75cm]{fig/logo/kit_landscape1.eps}}
 % NOTE:KITのロゴ画像の入手方法
 %   http://mercury.kanazawa-it.ac.jp/koho/kitlogo/
+\else
+\MyLogo{--- 鷹合研究室 ---} % トップスライドの下部中央
+\lfoot{\small 鷹合研}        % フッタ（左）
+\fi
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% フッタ（中央，右）
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cfoot{\thepage/\pageref{LastPage}}
 \rfoot{\small 1EP999} % テーマ番号
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
@@ -34,14 +42,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{
-{\large 令和元年度 プロジェクトデザインIII}\\\vspace{10mm}
+{\large 令和98年度 プロジェクトデザインIII}\\\vspace{10mm}
 {\LARGE PDⅢ活動における\\「やるやる詐欺」の傾向と対策}
 }
-\date{情報工学科 鷹合研究室}
+\date{令和99年99月99日}
 \author{
-3EP5-05\\ \ruby{織田}{おだ}\ruby{信秀}{のぶひで} \and
-3EP5-15\\ \ruby{織田}{おだ}\ruby{信長}{のぶなが} \and 
-3EP5-22\\ \ruby{織田}{おだ}\ruby{信雄}{のぶかつ}
+4EP5-05\\ \ruby{織田}{おだ}\ruby{信秀}{のぶひで} \and
+4EP5-15\\ \ruby{織田}{おだ}\ruby{信長}{のぶなが} \and 
+4EP5-22\\ \ruby{織田}{おだ}\ruby{信雄}{のぶかつ}
 }
 
 
@@ -50,7 +58,7 @@
 \maketitle % タイトルページ
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 1. はじめに -- 背景と目的 -- }
+ \foilhead{\Large 1. はじめに -- 背景と目的 -- }
 \begin{itemize}
  \item 現在，何が問題か（あるいは将来，何が問題になるか）を書く．
  \item その問題に対処するためには，どのようなものがあればよいか（あるいは取り組みが必要）かを書く．
@@ -61,7 +69,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \foilhead{\Large 発表の流れ}
 \begin{enumerate}
-	\item {\color{gray}はじめに -- 背景と目的 --}
+	\item \textcolor{gray}{はじめに -- 背景と目的 --}
 	\item システム概要
 	\item 評価
 	\item むすび
@@ -88,7 +96,7 @@
 	\item[②中間層]~\\
 	ああああああああああああああああああああああいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいうううううううううううううううう
 	\item[③出力層]~\\
-	あああああああ{\color{red}ああああああああ}あああああ
+	あああああああ\textcolor{red}{ああああああああ}あああああ
 	\begin{enumerate}
 		\item 巧言令色，鮮なし仁
 		\item 後生畏可し，焉んぞ来者の今に，如かざるを知らんや．
