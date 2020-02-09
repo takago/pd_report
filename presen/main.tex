@@ -30,8 +30,11 @@
 % フッタ（中央，右）
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cfoot{\thepage/\pageref{LastPage}}
+%\cfoot{\thepage/\pageref{LastPage}} 
+\cfoot{\thepage/\pageref{MUSUBI}}
 \rfoot{\small 1EP999} % テーマ番号
+
+
 
 
 
@@ -42,7 +45,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{
-{\large 令和98年度 プロジェクトデザインIII}\\\vspace{10mm}
+{\normalsize 令和98年度 プロジェクトデザインIII}\\\vspace{10mm}
 {\LARGE PDⅢ活動における\\「やるやる詐欺」の傾向と対策}
 }
 \date{令和99年99月99日}
@@ -68,7 +71,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \foilhead{\Large 発表の流れ}
-\begin{enumerate}
+\begin{enumerate}[itemsep=0.25zh]
 	\item \textcolor{gray}{はじめに -- 背景と目的 --}
 	\item システム概要
 	\item 評価
@@ -88,9 +91,26 @@
 \end{figure}
 \newpage
 
+%%%%%%%%%%%%%%% minipage の利用例 %%%%%%%%%%%%%%%%%%%
+%------ 左側
+\begin{minipage}[t]{0.4\textwidth}\vspace{0pt}
+あああああああああああああああああああああああああああああああああああああああああああああああああああああああああいゆえお．
+\begin{itemize}[parsep=-0.5zh]
+	\item いいいいいいいいいいいいいいいいい
+	\item うううううううううううううううううう
+	\item えええええええええええええええええええええええええ
+\end{itemize}
+\end{minipage}
+%------ 右側
+\begin{minipage}[t]{0.6\textwidth}\vspace{0pt}
+\begin{center}
+\includegraphics[keepaspectratio, width=.9\linewidth,trim={100mm 0mm 0mm 15mm},clip]{fig/system.pdf}
+\end{center}
+\end{minipage}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \foilhead{\Large 2-1. 畳み込みニューラルネットワークの構造}
-\begin{description} 
+\begin{description}
 	\item[①入力層]~\\
 	ああああああああああああああああああああああいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいうううううううううううううううう
 	\item[②中間層]~\\
@@ -128,7 +148,7 @@
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\foilhead{\Large 4. むすび}
+\foilhead{\Large 4. むすび}\label{MUSUBI}
 \begin{itemize}
 	\item 何のために何を作成したかを改めて書く．
 	\item 現時点での評価結果，考察を簡潔に書く．
