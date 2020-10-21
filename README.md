@@ -34,7 +34,7 @@ $ cd /usr/local/texlive/texmf-local/tex/latex/local
 $ sudo git clone https://github.com/h-kitagawa/plistings.git
 $ sudo mktexlsr
  
-  原の味フォントを埋め込むように設定（好みの問題）
+  （必要に応じて）原の味フォントを埋め込むように設定
 
 $ sudo kanji-config-updmap-sys --jis2004 haranoaji
 ```
