@@ -29,11 +29,13 @@ menucolor=black,%
 \usepackage{longtable}
 \usepackage{graphicx}
 
+
+
+
 %%%%%%%%%%%%%% マージン設定 %%%%%%%%%%%%%%
 % 両面印刷・かつファイルに閉じる用に調整
-\usepackage{tocloft}
-\usepackage{tocstyle}
 \usepackage[twoside,top=15truemm,bottom=15truemm,inner=30truemm,outer=20truemm]{geometry}
+
 
 \doublerulesep=\arrayrulewidth
 \setcounter{topnumber}{10}
@@ -43,9 +45,6 @@ menucolor=black,%
 \renewcommand{\bottomfraction}{1}
 \renewcommand{\textfraction}{0}
 \renewcommand{\floatpagefraction}{1}
-
-
-
 
 %%%%%%%%%%%%%% LISTINGS %%%%%%%%%%%%%%%%%%%%%
 \usepackage{caption}% これがないとlistingのキャプションが乱れることがある
@@ -90,6 +89,80 @@ menucolor=black,%
 }
 \def\lstlistingname{リスト}
 \def\lstlistlistingname{ソースリスト目次}
+
+
+%%%%%%%%%%%%%% 目次設定 %%%%%%%%%%%%%%
+\usepackage{tocloft}
+\cftsetindents{chapter}{0em}{3em}
+\cftsetindents{section}{3em}{3em}
+\cftsetindents{subsection}{4em}{3em}
+\cftsetindents{subsubsection}{5em}{3em}
+
+% listing用にtocloftを追加
+\makeatletter
+\begingroup\let\newcounter\@gobble\let\setcounter\@gobbletwo
+\globaldefs\@ne \let\c@loldepth\@ne
+\newlistof{listings}{lol}{\lstlistlistingname}
+\endgroup
+\let\l@lstlisting\l@listings
+\AtBeginDocument{\addtocontents{lol}{\protect\addvspace{10\p@}}}
+\makeatother
+\renewcommand{\lstlistoflistings}{\listoflistings}
+
+
+% \renewcommand{\cftfigfont}{\gtfamily}      % 図一覧のフォント
+% \renewcommand{\cfttabfont}{\gtfamily}      % 表一覧のフォント
+% \renewcommand{\cftlistingsfont}{\gtfamily} % リスト一覧のフォント
+
+\cftsetindents{figure}{0em}{8em}
+\cftsetindents{table}{0em}{8em}
+\cftsetindents{listings}{0em}{0em}
+
+
+
+% 目次の表題
+\renewcommand{\cfttoctitlefont}{\hfill\large\gtfamily}
+\renewcommand{\cftaftertoctitle}{\hfill\null}
+\renewcommand{\cftbeforetoctitleskip}{0pt}
+\renewcommand{\cftaftertoctitleskip}{0pt}
+
+% 表目次
+\renewcommand{\cftlottitlefont}{\hfill\large\gtfamily}
+\renewcommand{\cftafterlottitle}{\hfill\null}
+\setlength{\cftbeforelottitleskip}{2em}
+\setlength{\cftafterlottitleskip}{0pt}
+\renewcommand{\cfttabpresnum}{表 }
+\renewcommand{\cfttabaftersnum}{:}
+\renewcommand{\cfttabnumwidth}{6em}
+
+% 図目次
+\renewcommand{\cftloftitlefont}{\hfill\large\gtfamily}
+\renewcommand{\cftafterloftitle}{\hfill\null}
+\setlength{\cftbeforeloftitleskip}{2em}
+\setlength{\cftafterloftitleskip}{0pt}
+\renewcommand{\cftfigpresnum}{図 }
+\renewcommand{\cftfigaftersnum}{:}
+\renewcommand{\cftfignumwidth}{6em}
+
+% ソースリスト目次
+\renewcommand{\cftloltitlefont}{\hfill\large\gtfamily}
+\renewcommand{\cftafterloltitle}{\hfill\null}
+\renewcommand{\cftbeforeloltitleskip}{2em}
+\renewcommand{\cftafterloltitleskip}{0pt}
+\renewcommand{\cftlistingspresnum}{リスト }
+\renewcommand{\cftlistingsaftersnum}{:}
+\renewcommand{\cftlistingsnumwidth}{6em}
+
+% 章見出しのフォント
+\renewcommand{\cftchapfont}{\normalsize\gtfamily}
+\renewcommand{\cftchappagefont}{\normalsize}
+\renewcommand{\cftchappresnum}{}
+\renewcommand{\cftchapaftersnum}{}
+\renewcommand{\cftchapnumwidth}{5em}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+\setlength{\cftbeforechapskip}{.5em}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 数式中にコメントをいれられるようにする\
 \usepackage{amsmath,amssymb,bm}
@@ -101,6 +174,7 @@ menucolor=black,%
 \usepackage{txfonts}
 \usepackage[deluxe,uplatex]{otf}
 \usepackage{ascmac} %% \return
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Verbatim環境にデフォルト値をセット
 \usepackage{fancyvrb}
