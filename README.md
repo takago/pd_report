@@ -8,7 +8,10 @@
 
 - 印刷はWindowsのAdobe Readerで印刷するとよい．ただし，「実際のサイズ」というチェックボタンを選択してから印刷すること（Adobe Readerはデフォルトのままだと「合わせる」になっているので96%くらいになってしまうので注意する）．
 
-## ディストリビュータパッケージを使わず，TeX環境を自分で用意する場合（texlive2020）
+## Linuxパッケージを使わず，TeXLiveのインストールスクリプトで環境構築する方法
+
+7GB程度はディスクを消費します（ディスク消費を節約したい場合はLinuxパッケージのほうが良いでしょう）
+
 ```
 $ cd /tmp
 $ wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
