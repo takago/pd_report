@@ -8,12 +8,15 @@
 
 - 印刷はWindowsのAdobe Readerで印刷するとよい．ただし，「実際のサイズ」というチェックボタンを選択してから印刷すること（Adobe Readerはデフォルトのままだと「合わせる」になっているので96%くらいになってしまうので注意する）．
 
-## 【参考】TeXLiveのインストールスクリプトで環境構築する方法
+## 【おまけ】TeXLiveのインストールスクリプトで環境構築する方法
 
 7GB程度はディスクを消費します（ディスク消費を節約したい場合はLinuxディストリビューションのパッケージのほうを入れた方が良いかもしれません）
-適宜読み替えて下さい
+
 
 ```
+
+パスなどは適宜読み替えて下さい．質問は一切しないでください．
+
 $ cd /tmp
 $ wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 $ tar xvf install-tl-unx.tar.gz
