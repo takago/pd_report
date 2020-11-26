@@ -1,3 +1,4 @@
+% !TeX root = main.tex
 %%%-------------------------------------------------------------------------
 %%% PD3予稿集用クラスファイル (tkglabs.cls)
 %%% 作成： 金沢工大・情報工学科・鷹合研究室(2017,12/6)
@@ -7,20 +8,22 @@
 %                      基本設定(クラス用)
 %ここから ------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tkglabs}[2019/01/08]
-\LoadClass[dvipdfmx,9pt,twoside,uplatex]{jsarticle} %% ベースにするクラス
+\ProvidesClass{tkglabs}[2020/11/26]
+\LoadClass[dvipdfmx,10pt,twoside,uplatex]{jsarticle} %% ベースにするクラス
+% Wordで9ptという指定でも，TeXなら10ptのままでよい
 % ここまで -----------------------------------------------------------------
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                      基本設定
+%                      基本設定(2020,11/26変更)
 %ここから ------------------------------------------------------------------
-\usepackage[top=20truemm,bottom=20truemm,left=20truemm,right=20truemm]{geometry} % 余白
+\usepackage[truedimen,top=20truemm,bottom=20truemm,left=20truemm,right=20truemm,a4paper]{geometry} % 余白
 \usepackage[dvipdfmx]{graphicx} % 図の挿入
 \usepackage{multirow} % 表における縦方向の連結
 \usepackage{arydshln} % 表における点線
-\renewcommand{\baselinestretch}{0.9} % 行間のつめ具合
+\renewcommand{\baselinestretch}{0.75} % 行間のつめ具合
 \usepackage{url}      % URLの挿入
+\usepackage{setspace} % 部分的に行間を変える
 % ここまで -----------------------------------------------------------------
 
 
@@ -35,9 +38,11 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                       2段組と図表の設定
+%                   2段組の中に図表を配置できるようにする(Figure/Table環境)
 %ここから ------------------------------------------------------------------
-\usepackage{multicol,caption}
+\usepackage{multicol}
+% \caption{}だとキャプションがつかないので，\captionof{}を使う
+\usepackage[tablename=表,figurename=図,labelsep=space]{caption}
 % Figure環境の登録
 \newenvironment{Figure}
 {\par\medskip\noindent\minipage{\linewidth}}
@@ -49,6 +54,14 @@
 % ここまで -----------------------------------------------------------------
 
 
+\newcommand{\figcap}[3]{
+\captionof{figure}{#1}\label{#3}\vspace{-3mm}{Fig.\ref{#3}~~#2}
+}
+
+\newcommand{\tabcap}[3]{
+\captionof{table}{#1}\label{#3}\vspace{-2mm}{Table \ref{#3}~~#2}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                       フォントの設定
 %ここから ------------------------------------------------------------------
@@ -56,14 +69,13 @@
 \usepackage[deluxe,uplatex]{otf}
 % ここまで -----------------------------------------------------------------
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                       セクションタイトルの変更
 %ここから ------------------------------------------------------------------
 \usepackage{titlesec}
-\titleformat*{\section}{\fontsize{10}{20}\bfseries}
-\titleformat*{\subsection}{\fontsize{10}{10}\bfseries}
-\titleformat*{\subsubsection}{\fontsize{10}{0}\bfseries}
+\titleformat{\section}{\fontsize{10.5}{10}\bfseries}{\thesection.}{1zw}{}
+\titleformat*{\subsection}{\fontsize{10.5}{10}\bfseries}
+\titleformat*{\subsubsection}{\fontsize{10.5}{0}\bfseries}
 %セクション番号が消えるバグの修正（https://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15）
 \usepackage{etoolbox}
 \makeatletter
@@ -85,13 +97,9 @@
 \fancyhead{}
 \fancyhf{} % ページスタイルの消去
 \renewcommand{\headrulewidth}{0.0pt}
-\ifx\RHEADER\undefined
-\fancyhead[RO]{\begin{tabular}{|p{2cm};{1pt/1pt}p{2cm}|}\hline \hfil テーマ番号\hfil & \hfil \THEMEID \hfil \\\hline\end{tabular}}
-\fancyhead[LE]{\begin{tabular}{|p{2cm};{1pt/1pt}p{2cm}|}\hline \hfil テーマ番号\hfil & \hfil \THEMEID \hfil \\\hline\end{tabular}}
-\else
-\fancyhead[LO]{\begin{tabular}{|p{2cm};{1pt/1pt}p{2cm}|}\hline \hfil テーマ番号\hfil & \hfil \THEMEID \hfil \\\hline\end{tabular}}
-\fancyhead[RE]{\begin{tabular}{|p{2cm};{1pt/1pt}p{2cm}|}\hline \hfil テーマ番号\hfil & \hfil \THEMEID \hfil \\\hline\end{tabular}}
-\fi
+% 基数ページ，偶数ページのヘッダを用意
+\fancyhead[LO]{\begin{spacing}{0.8}\begin{tabular}{|p{1.8cm};{1pt/1pt}p{1.5cm}|}\hline \small\hfil テーマ番号\hfil & \hfil\small\THEMEID \hfil \\\hline\end{tabular}\end{spacing}}
+\fancyhead[RE]{\begin{spacing}{0.8}\begin{tabular}{|p{1.8cm};{1pt/1pt}p{1.5cm}|}\hline \small\hfil テーマ番号\hfil & \hfil\small \THEMEID \hfil \\\hline\end{tabular}\end{spacing}}
 % ここまで -----------------------------------------------------------------
 
 
@@ -114,82 +122,36 @@
 \null\vspace{-8mm}
 \begin{table*}[h] 
 \noindent
-\ifx\RHEADER\undefined
-\hfill\begin{tabular}{|p{1.295cm};{1pt/1pt}p{2.495cm}|}\hline \scalebox{0.8}{テーマ番号}& \hfil \THEMEID \hfil\\\hline\end{tabular}
-\else
-\begin{tabular}{|p{2cm};{1pt/1pt}p{2cm}|}\hline \hfil テーマ番号 \hfil& \hfil\THEMEID\hfil\\\hline\end{tabular}
-\fi
-\newline
-\vspace{-10.3\lineskip} % プロジェクトテーマ番号の箱の位置
+\begin{spacing}{0.8}
+\begin{tabular}{|p{1.8cm};{1pt/1pt}p{1.5cm}|}\hline \hfil \small テーマ番号 \hfil& \hfil\small \THEMEID\hfil\\\hline\end{tabular}
+\newline 
+\vspace{-10\lineskip} % プロジェクトテーマ番号の箱の位置（要調整）
 \newline
 \noindent
 \begin{tabular}{|c;{1pt/1pt}c;{1pt/1pt}c|c;{1pt/1pt}c|}
 \hline
- \multirow{\CENTERADJ}{*}{\begin{minipage}{2cm}\begin{center}プロジェクト\\テーマ\end{center}\end{minipage}}  &\scalebox{0.8}{和文} &\begin{minipage}{10.2cm}\vspace{2mm}\TITLEJP\vspace{2mm}\end{minipage} &
- \multirow{\CENTERADJ}{*}{指導教員} & \multirow{\CENTERADJ}{*}{\PROFNAME} \\
-\cdashline{2-3}[1pt/1pt]   &\scalebox{0.8}{英文} & \begin{minipage}{10.2cm}\vspace{2mm}\TITLEEN\vspace{2mm}\end{minipage}& & \\
+ \multirow{\CENTERADJ}{*}{\begin{minipage}{1.8cm}\begin{center}\small プロジェクト\\テーマ\end{center}\end{minipage}}  &\scalebox{0.8}{和文} &\begin{minipage}{8.8cm}\vspace{2mm}\TITLEJP\vspace{2mm}\end{minipage} &
+ \multirow{\CENTERADJ}{*}{\small 指導教員} & \multirow{\CENTERADJ}{*}{\PROFNAME} \\
+\cdashline{2-3}[1pt/1pt]   &\scalebox{0.8}{英文} & \begin{minipage}{8.8cm}\vspace{2mm}\small\TITLEEN\vspace{2mm}\end{minipage}& & \\
 \hline
 \multicolumn{2}{|c;{1pt/1pt}}{
-	\begin{minipage}{2cm}\begin{center}プロジェクト\\メンバー\end{center}\end{minipage}}
+	\begin{minipage}{2cm}\begin{center}\small プロジェクト\\メンバー\end{center}\end{minipage}}
 				 &
 				\multicolumn{3}{l|}{
-	\begin{minipage}{14.75cm}\begin{center}\AUTHORS\end{center}\end{minipage}}  \\
+	\begin{minipage}{13.3cm}\begin{center}\vspace{1mm}\AUTHORS\vspace{1mm}\end{center}\end{minipage}}  \\
 		 \hline
-\end{tabular}\\
+\end{tabular}
+\end{spacing}
 
-%%%% アブストラクト 
-\vspace{1mm}\noindent \textbf{Abstract}\hspace{3mm} \ABSTRACT
+%%%% アブストラクト（行間は狭めに）
+\vspace{5mm}\noindent 
+\begin{spacing}{0.6}
+\textbf{Abstract}\hspace{3mm} {\small\ABSTRACT}
+\end{spacing}
 
 %%%% キーワード 
-\vspace{1mm}\noindent \textbf{Keywords}\hspace{3mm}  \KEYWORDS
+\vspace{5mm}\noindent \textbf{Keywords}\hspace{3mm}  \small\KEYWORDS
 \end{table*}
 \vspace{-5mm}
 }
-% ここまで ------------------------------------------------------------------
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                       キャプションの変更
-% 
-% http://nabew.blog113.fc2.com/blog-entry-18.html を引用
-%
-%ここから ------------------------------------------------------------------
-\makeatletter  % プリアンブルに書く場合は必要
-\def\fnum@Jfigure{図} 
-\def\fnum@Efigure{Fig.} 
-\def\fnum@Jtable{表} 
-\def\fnum@Etable{Table} 
-
-%% キャプション設定1
-\long\def\@emakecaption#1#2{%
-%% \vskip\abovecaptionskip
-  \iftdir\sbox\@tempboxa{#1\hskip1zw#2}%
-    \else\sbox\@tempboxa{#1: #2}%
-  \fi
-  \ifdim \wd\@tempboxa >\hsize
-    \iftdir #1\hskip1zw#2\relax\par
-      \else #1: #2\relax\par\fi
-  \else
-    \global \@minipagefalse
-    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
-  \fi
-  \vskip\belowcaptionskip}
-
-%% キャプション設定2
-\long\def\@caption#1[#2]#3#4{%
-  \par
-  \addcontentsline{\csname ext@#1\endcsname}{#1}%
-    {\protect\numberline{\csname the#1\endcsname}{\ignorespaces #2}}%
-  \begingroup
-    \@parboxrestore
-    \if@minipage
-      \@setminipage
-    \fi
-    \normalsize
-    \@makecaption{\csname fnum@J\@captype\endcsname \csname the\@captype\endcsname}{\ignorespaces #3}\par\vspace{-2mm}
-    \@emakecaption{\csname fnum@E\@captype\endcsname \csname the\@captype\endcsname}{\ignorespaces #4}\par\vspace{1mm}
- \endgroup}
-
-\makeatother  % プリアンブルに書く場合は必要
 % ここまで ------------------------------------------------------------------
