@@ -43,23 +43,26 @@
 \usepackage{multicol}
 % \caption{}だとキャプションがつかないので，\captionof{}を使う
 \usepackage[tablename=表,figurename=図,labelsep=space]{caption}
-% Figure環境の登録
-\newenvironment{Figure}
+
+% figure環境の登録（書き換え）
+\renewenvironment{figure}
 {\par\medskip\noindent\minipage{\linewidth}}
 {\endminipage\par\medskip}
-% Table環境の登録
-\newenvironment{Table}
+
+% table環境の登録（書き換え）
+\renewenvironment{table}
 {\par\medskip\noindent\minipage{\linewidth}}
 {\endminipage\par\medskip}
 % ここまで -----------------------------------------------------------------
 
 
 \newcommand{\figcap}[3]{
-\captionof{figure}{#1}\label{#3}\vspace{-3mm}{Fig.\ref{#3}~~#2}
+\vspace{-5mm}
+\captionof{figure}{#1}\label{#3}\vspace{-3mm}{Fig.\ref{#3}~~#2}\\
 }
 
 \newcommand{\tabcap}[3]{
-\captionof{table}{#1}\label{#3}\vspace{-2mm}{Table \ref{#3}~~#2}
+\captionof{table}{#1}\label{#3}\vspace{-2mm}{Table \ref{#3}~~#2}\\
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,14 +134,14 @@
 \begin{tabular}{|c;{1pt/1pt}c;{1pt/1pt}c|c;{1pt/1pt}c|}
 \hline
  \multirow{\CENTERADJ}{*}{\begin{minipage}{1.8cm}\begin{center}\small プロジェクト\\テーマ\end{center}\end{minipage}}  &\scalebox{0.8}{和文} &\begin{minipage}{8.8cm}\vspace{2mm}\TITLEJP\vspace{2mm}\end{minipage} &
- \multirow{\CENTERADJ}{*}{\small 指導教員} & \multirow{\CENTERADJ}{*}{\PROFNAME} \\
+ \multirow{\CENTERADJ}{*}{\small 指導教員} & \multirow{\CENTERADJ}{*}{\scalebox{0.95}\PROFNAME} \\
 \cdashline{2-3}[1pt/1pt]   &\scalebox{0.8}{英文} & \begin{minipage}{8.8cm}\vspace{2mm}\small\TITLEEN\vspace{2mm}\end{minipage}& & \\
 \hline
 \multicolumn{2}{|c;{1pt/1pt}}{
 	\begin{minipage}{2cm}\begin{center}\small プロジェクト\\メンバー\end{center}\end{minipage}}
 				 &
 				\multicolumn{3}{l|}{
-	\begin{minipage}{13.3cm}\begin{center}\vspace{1mm}\AUTHORS\vspace{1mm}\end{center}\end{minipage}}  \\
+	\begin{minipage}{13.3cm}\begin{center}\vspace{1mm}\scalebox{0.9}{\AUTHORS}\vspace{0mm}\\\end{center}\end{minipage}}  \\
 		 \hline
 \end{tabular}
 \end{spacing}
