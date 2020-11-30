@@ -24,6 +24,7 @@
 \renewcommand{\baselinestretch}{0.75} % 行間のつめ具合
 \usepackage{url}      % URLの挿入
 \usepackage{setspace} % 部分的に行間を変える
+
 % ここまで -----------------------------------------------------------------
 
 
@@ -101,8 +102,8 @@
 \fancyhf{} % ページスタイルの消去
 \renewcommand{\headrulewidth}{0.0pt}
 % 基数ページ，偶数ページのヘッダを用意
-\fancyhead[LO]{\begin{spacing}{0.8}\begin{tabular}{|p{1.8cm};{1pt/1pt}p{1.5cm}|}\hline \small\hfil テーマ番号\hfil & \hfil\small\THEMEID \hfil \\\hline\end{tabular}\end{spacing}}
-\fancyhead[RE]{\begin{spacing}{0.8}\begin{tabular}{|p{1.8cm};{1pt/1pt}p{1.5cm}|}\hline \small\hfil テーマ番号\hfil & \hfil\small \THEMEID \hfil \\\hline\end{tabular}\end{spacing}}
+\fancyhead[LO]{\vspace{2mm}\begin{spacing}{0.8}\begin{tabular}{|p{2cm};{1pt/1pt}p{1.7cm}|}\hline \small\hfil テーマ番号\hfil & \hfil\small\THEMEID \hfil \\\hline\end{tabular}\end{spacing}}
+\fancyhead[RE]{\vspace{2mm}\begin{spacing}{0.8}\begin{tabular}{|p{2cm};{1pt/1pt}p{1.7cm}|}\hline \small\hfil テーマ番号\hfil & \hfil\small \THEMEID \hfil \\\hline\end{tabular}\end{spacing}}
 % ここまで -----------------------------------------------------------------
 
 
@@ -116,7 +117,6 @@
 }
 % ここまで -----------------------------------------------------------------
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                      タイトルの設定
 %ここから ------------------------------------------------------------------
@@ -126,22 +126,27 @@
 \begin{table*}[h] 
 \noindent
 \begin{spacing}{0.8}
-\begin{tabular}{|p{1.8cm};{1pt/1pt}p{1.5cm}|}\hline \hfil \small テーマ番号 \hfil& \hfil\small \THEMEID\hfil\\\hline\end{tabular}
+\begin{tabular}{|p{1.75cm};{1pt/1pt}p{1.48cm}|}\hline \hfil\scalebox{0.8}{テーマ番号} \hfil& \hfil\small \THEMEID\hfil\\\hline\end{tabular}
 \newline 
 \vspace{-10\lineskip} % プロジェクトテーマ番号の箱の位置（要調整）
 \newline
 \noindent
 \begin{tabular}{|c;{1pt/1pt}c;{1pt/1pt}c|c;{1pt/1pt}c|}
 \hline
- \multirow{\CENTERADJ}{*}{\begin{minipage}{1.8cm}\begin{center}\small プロジェクト\\テーマ\end{center}\end{minipage}}  &\scalebox{0.8}{和文} &\begin{minipage}{8.8cm}\vspace{2mm}\TITLEJP\vspace{2mm}\end{minipage} &
- \multirow{\CENTERADJ}{*}{\small 指導教員} & \multirow{\CENTERADJ}{*}{\scalebox{0.95}\PROFNAME} \\
-\cdashline{2-3}[1pt/1pt]   &\scalebox{0.8}{英文} & \begin{minipage}{8.8cm}\vspace{2mm}\small\TITLEEN\vspace{2mm}\end{minipage}& & \\
+ \multirow{\CENTERADJ}{*}{\begin{minipage}[c]{1.75cm}\begin{center}
+\scalebox{0.8}{プロジェクト}\\\scalebox{0.8}{テーマ}
+\end{center}\end{minipage}}  &
+\begin{minipage}[c]{0.4cm}\scalebox{0.7}{和文}\end{minipage} &\begin{minipage}{8.6cm}\vspace{1mm}\TITLEJP\vspace{1mm}\end{minipage} & 
+ \multirow{\CENTERADJ}{*}{\begin{minipage}[c]{1.3cm}\begin{center}
+\scalebox{0.8}{指導教員}
+\end{center}\end{minipage}} & \multirow{\CENTERADJ}{*}{\scalebox{0.9}\PROFNAME} \\
+\cdashline{2-3}[1pt/1pt]   &\begin{minipage}[c]{0.4cm}\scalebox{0.7}{英文}\end{minipage} & \begin{minipage}{8.6cm}\vspace{1mm}\small\TITLEEN\vspace{1mm}\end{minipage}& & \\
 \hline
 \multicolumn{2}{|c;{1pt/1pt}}{
-	\begin{minipage}{2cm}\begin{center}\small プロジェクト\\メンバー\end{center}\end{minipage}}
+	\begin{minipage}{2cm}\begin{center}\scalebox{0.8}{プロジェクト}\\\vspace{-1mm}\scalebox{0.8}{メンバー}\end{center}\end{minipage}}
 				 &
 				\multicolumn{3}{l|}{
-	\begin{minipage}{13.3cm}\begin{center}\vspace{1mm}\scalebox{0.9}{\AUTHORS}\vspace{0mm}\\\end{center}\end{minipage}}  \\
+	\begin{minipage}{13.5cm}\begin{center}\vspace{1mm}\scalebox{0.9}{\AUTHORS}\vspace{0mm}\\\end{center}\end{minipage}}  \\
 		 \hline
 \end{tabular}
 \end{spacing}
