@@ -4,6 +4,10 @@ NUP = "2x5"
 
 all: typeset
 
+kitlogo: 
+	wget http://mercury.kanazawa-it.ac.jp/koho/kitlogo/img/eps/kit_landscape1.eps -O fig/kit_landscape1.eps
+
+
 typeset:
 	ptex2pdf -u -l -ot '-synctex=1 -halt-on-error -file-line-error' presen.tex
 	ptex2pdf -u -l -ot '-synctex=1 -halt-on-error -file-line-error' presen.tex
