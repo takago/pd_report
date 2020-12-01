@@ -5,7 +5,7 @@ NUP = "2x5"
 all: typeset
 
 kitlogo: 
-	wget http://mercury.kanazawa-it.ac.jp/koho/kitlogo/img/eps/kit_landscape1.eps -O fig/kit_landscape1.eps
+	wget --no-proxy http://mercury.kanazawa-it.ac.jp/koho/kitlogo/img/eps/kit_landscape1.eps -O fig/kit_landscape1.eps
 
 
 typeset:
