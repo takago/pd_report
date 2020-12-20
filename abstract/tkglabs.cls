@@ -22,7 +22,7 @@
 \usepackage{multirow} % 表における縦方向の連結
 \usepackage{arydshln} % 表における点線
 \renewcommand{\baselinestretch}{0.75} % 行間のつめ具合
-\usepackage{url}      % URLの挿入
+\usepackage{xurl}      % 折り返しできるURLの挿入
 \usepackage{setspace} % 部分的に行間を変える
 
 % ここまで -----------------------------------------------------------------
