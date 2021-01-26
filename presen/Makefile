@@ -15,8 +15,10 @@ typeset:
 hiragino:
 	ptex2pdf -u -l -ot '-synctex=1 -halt-on-error -file-line-error' -od '-f otf-up-hiragino-pron.map' presen.tex
 
-nup: presen.pdf
-	pdfjam --scale 0.96 --frame true --no-landscape --nup ${NUP} presen.pdf -o presen-nup.pdf
+handout: presen.pdf
+	pdfjam --scale 0.96 --frame true --no-landscape --nup ${NUP} presen.pdf -o handout-10up.pdf
+	pdfjam --scale 0.96 --frame true --no-landscape --nup "1x2" --offset '0mm 15mm' --delta '0mm 30mm' presen.pdf -o handout-2up.pdf
+	pdfjam --scale 0.96 --frame true --landscape --nup "2x2" --offset '0mm 8mm' --delta '0mm 20mm' presen.pdf -o presen-4up.pdf
 
 clean:
 	rm -f *.aux *.dvi *.idx *.ilg *.ind *.log *.out *.toc *.fls *.lot *.lol *.lof *.synctex.gz *.fdb_latexmk
