@@ -10,24 +10,52 @@
 ## abstractを作成する
 
 1. [Overleaf](https://www.overleaf.com/)開いてプロジェクトを作成
-    1. ログインしてプロジェクト一覧を開く
-    2. New Project > Blank Project を押して新しいプロジェクトを作成します
-    3. プロジェクトの編集ページが表示されたらすでにある`mian.tex`を削除します
-    4. このリポジトリの[abstract](/abstract)の中身を全てアップロードしてください  
-    (**注意:** ディレクトはアップロードできませんOverleaf上で作成してください)  
-    (**注意:** ディレクトリ構造が崩れるとうまく動きません注意です)
-    5. `latexmkrc`というファイルを作成して以下の内容を書き込みます  
-    ```
-    $latex = 'uplatex';
-    $bibtex = 'upbibtex';
-    $dvipdf = 'dvipdfmx %O -o %D %S';
-    $makeindex = 'mendex -U %O -o %D %S';
-    $pdf_mode = 3;
-    ```
-    6. 左端が以下のようになってれば正解  
-    ![](use_overleaf/img1.png) 
+2. ログインしてプロジェクト一覧を開く
+3. New Project > Blank Project を押して新しいプロジェクトを作成します
+4. プロジェクトの編集ページが表示されたらすでにある`mian.tex`を削除します
+5. このリポジトリの[abstract](/abstract)の中身を全てアップロードしてください  
+(**注意:** ディレクトはアップロードできませんOverleaf上で作成してください)  
+(**注意:** ディレクトリ構造が崩れるとうまく動きません注意です)
+6. `latexmkrc`というファイルを作成して以下の内容を書き込みます  
+```
+$latex = 'uplatex';
+$bibtex = 'upbibtex';
+$dvipdf = 'dvipdfmx %O -o %D %S';
+$makeindex = 'mendex -U %O -o %D %S';
+$pdf_mode = 3;
+```
+7. 左端が以下のようになってれば正解  
+![](use_overleaf/img1.png) 
+8. 左端のメニューを開いて以下のように設定します  
+![](use_overleaf/img2.png) 
+9.  これで完成です！！  
+あとは普通のtexエディタと同様です．
 
-    7. これで完成です！！
+## paperを作成する
 
+1. [Overleaf](https://www.overleaf.com/)開いてプロジェクトを作成
+2. ログインしてプロジェクト一覧を開く
+3. New Project > Blank Project を押して新しいプロジェクトを作成します
+4. プロジェクトの編集ページが表示されたらすでにある`mian.tex`を削除します
+5. このリポジトリの[abstract](/abstract)の中身を全てアップロードしてください  
+(**注意:** ディレクトはアップロードできませんOverleaf上で作成してください)  
+(**注意:** ディレクトリ構造が崩れるとうまく動きません注意です)
+6. `latexmkrc`というファイルを作成して以下の内容を書き込みます  
+```
+$latex = 'uplatex';
+$bibtex = 'upbibtex';
+$dvipdf = 'dvipdfmx %O -o %D %S';
+$makeindex = 'mendex -U %O -o %D %S';
+$pdf_mode = 3;
+```
+7. 左端が以下のようになってれば正解  
+![](use_overleaf/img3.png) 
+8. 左端のメニューを開いて以下のように設定します  
+![](use_overleaf/img4.png) 
+9. `takagolab.sty`の50行目を  
+`\usepackage{color,listings,plistings}`から  
+`\usepackage{color,listings}`に変更してください
+10.  これで完成です！！  
+あとは普通のtexエディタと同様です．
 
 作成者: [鈴木大志](https://github.com/SuzukiDaishi) (変更日: 2021.1.8)
