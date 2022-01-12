@@ -1,6 +1,7 @@
 # pd_report
 
 鷹合研メンバー向けの，(1)卒論本文，(2)背表紙，(3)アブストラクト，(4)プレゼンスライドのTeXソース（雛形），の4点セット．
+- アブストラクトは学部・修士に両方に対応．
 - uplatexでタイプセットしてください．
 - Hironori Kitagawa氏の plistings (MITライセンス) が必要( https://github.com/h-kitagawa )
 - プレゼンスライドのタイプセットにはCTANにある foiltex が必要（ https://www.ctan.org/pkg/foiltex ）
