@@ -32,7 +32,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\cfoot{\thepage/\pageref{LastPage}} 
-\cfoot{\thepage/\pageref{MUSUBI}}
+\cfoot{\thepage/\pageref{LastPage}}
 \rfoot{\small 1EP999} % テーマ番号
 
 
@@ -160,8 +160,40 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ここからおまけ
+
+\href{run:./demo002.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}} PDFファイルと同じフォルダにdemo002.mp4があれば再生できる．
+
+
+\href{https://youtu.be/74agBeJxdFI}{\textcolor{red}{\faYoutube}} YOUTUBEで再生
+
+\textcolor{red}{\faYoutube}\href{https://youtu.be/74agBeJxdFI}{~\url{https://youtu.be/74agBeJxdFI}}
+
 \lstinputlisting[language=c, caption=test2.c]{src/hello.c}
 \lstinputlisting[language=python, caption=test2.py]{src/world.py}
+
+% 色定義
+\definecolor{mygray}{gray}{0.95}
+\definecolor{mypink1}{hsb}{0.0, 0.188, 1.0}
+UNIXv1におけるタスク切り替えが行われるタイミング
+
+%%%%%%%%%%%%%%%%%%%%%%%%55
+\colorbox{mygray}{\begin{minipage}{\textwidth}
+① みなさん
+\end{minipage}}
+
+\colorbox{mygray}{\begin{minipage}{\textwidth}
+② こんにちは 
+\begin{itemize}
+\item まんじゅう
+\item りんご
+\end{itemize}
+\end{minipage}}
+
+\colorbox{mypink1}{\begin{minipage}{\textwidth}
+③ お元気で\\
+またあうひまで
+\end{minipage}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{verbatimx}
 $ gcc test.c \return
@@ -169,5 +201,26 @@ $ gcc test.c \return
  (*_*)
         \textcolor{red}{ここで\keytop{CTL}+\keytop{C}を押す}
 \end{verbatimx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+~\\
+\noindent\textbf{謝辞}~~本研究はJSPS科研費21Kxxxxxxxxx助成を受けた
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 参考文献 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{99}
+\small
+\setlength\itemsep{-0.5zh}%
+\bibitem{book1} K.Thompson，D.M.Ritchie，\textbf{"The UNIX Time-Sharing System"}，Communications of the ACM, Vol.17, No.7, 1974.
+\bibitem{book4} Digital Equipment Corporation: \textbf{PDP11/20-15-r20 Processor Handbook}, 1971.
+\bibitem{Preliminary} T.R. Bashkow, \textbf{"Study of UNIX: Preliminary Release of Unix Implementation Document"}, \url{ http://minnie.tuhs.org/Archive/Distributions/Research/Dennis_v1/PreliminaryUnixImplementationDocument_Jun72.pdf}, Jun. 1972.
+%\bibitem{book2} K. Thompson，D.M. Ritchie，"UNIX PROGRAMER'S MANUAL"，Nov. 1971.
+%\bibitem{web0} Warren Toomey, "The Unix Heritage Society", \url{https://www.tuhs.org/}, Dec. 2015.
+\bibitem{simh} simh, \textbf{"The Computer History Simulation Project"}, \url{https://github.com/simh/simh}, 参照Mar.14, 2022.
+\bibitem{ref0} W.Toomey, \textbf{"First Edition Unix: Its Creation and Restoration"}, IEEE Annals of the History of Computing, 32 (3), pp.74-82, 2010.
+%\bibitem{web1} Jim Huang, "Restoration of 1st Edition UNIX from Bell Laboratories", \url{https://github.com/jserv/unix-v1}, 参照Mar.14, 2022.
+\bibitem{book3} Diomidis.Spinellis，\textbf{"unix-history-repo"},  \url{https://github.com/dspinellis/unix-history-repo/tree/Research-V1}, 参照Mar.14, 2022.
+\bibitem{book5} Digital Equipment Copporation: \textbf{PDP11 Peripherals HandBook}, 1972.
+%\bibitem{book6} \url{https://github.com/No000/unix-v1-utils}
+%\bibitem{book7} \url{https://github.com/No000/UnixV1-SystemCallTracer}
+\end{thebibliography}
 
 \end{document} 
