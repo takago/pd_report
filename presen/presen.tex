@@ -5,7 +5,6 @@
 %%%-------------------------------------------------------------------------
 
 \input{tkg_slide.tex}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 図表のcaption番号を解除
 %\usepackage[hang,bf,labelformat = empty,labelsep=none,figurename=Y, tablename=X, singlelinecheck=off,justification=centering,labelfont=bf,textfont=bf]{caption} 
@@ -22,13 +21,26 @@
 
 \iffalse 
 % ↑iftrueに書き換えると，スライドにロゴ画像が挿入される
-\MyLogo{\includegraphics[height=1.1cm]{fig/logo/kit_landscape1.eps}}
-\lfoot{\includegraphics[height=.75cm]{fig/logo/kit_landscape1.eps}}
 % NOTE:KITのロゴ画像の入手方法
 %   http://mercury.kanazawa-it.ac.jp/koho/kitlogo/kit_landscape1.eps
+\MyLogo{\includegraphics[height=1.1cm]{fig/logo/kit_landscape1.eps}}
+\lfoot{\includegraphics[height=.75cm]{fig/logo/kit_landscape1.eps}}
+\fancypagestyle{myfirstpage}
+{
+	\fancyhf{}
+	\fancyfoot[C]{\includegraphics[height=1.1cm]{fig/logo/kit_landscape1.eps}}
+	\renewcommand{\headrulewidth}{0pt} % removes horizontal header line
+}
+
 \else
 \MyLogo{--- 鷹合研究室 ---} % トップスライドの下部中央
 \lfoot{\small 鷹合研}        % フッタ（左）
+\fancypagestyle{myfirstpage}
+{
+	\fancyhf{}
+	\fancyfoot[C]{--- 鷹合研究室 ---}
+	\renewcommand{\headrulewidth}{0pt} % removes horizontal header line
+}
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,7 +76,11 @@
 
 
 \begin{document}
-\maketitle % タイトルページ
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% タイトルページ
+\maketitle
+\thispagestyle{myfirstpage}
+\addtocounter{page}{1}
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \foilhead{\Large 1. はじめに -- 背景と目的 -- }
@@ -96,6 +112,8 @@
 \caption{あああああああ}
 \end{center}
 \end{figure}
+
+
 \newpage
 
 %%%%%%%%%%%%%%% minipage の利用例 %%%%%%%%%%%%%%%%%%%
