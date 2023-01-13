@@ -1,0 +1,121 @@
+% !TeX root = presen.tex
+\documentclass[25pt, landscape,oneside]{foils}
+
+
+
+% 4:3のスクリーン(古い建物)の場合
+%\usepackage[top=15truemm,bottom=22truemm,left=15truemm,right=15truemm,paperwidth=300truemm,paperheight=225truemm]{geometry}
+
+% 16:9のスクリーン(8号館，23号館)の場合
+\usepackage[top=15truemm,bottom=22truemm,left=15truemm,right=15truemm,paperwidth=320truemm,paperheight=180truemm]{geometry}
+
+
+
+% 箇条書き環境の余白設定
+\usepackage[shortlabels]{enumitem}
+\setlist[description]{topsep=3mm,parsep=0mm,partopsep=0mm,itemsep=.5\zh,leftmargin=2\zw,labelsep=.5\zw}
+\setlist[enumerate]{topsep=3mm,parsep=0mm,partopsep=0mm,itemsep=.5\zh,leftmargin=2\zw,labelsep=.5\zw}
+\setlist[itemize]{topsep=3mm,parsep=0mm,partopsep=0mm,itemsep=.5\zh,leftmargin=2\zw,labelsep=.5\zw}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% ここから下は書き換えない
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% スライドの見出しの位置
+\setlength{\foilheadskip}{-14mm}
+
+% スライドなので字下げしない
+\setlength{\parindent}{0mm}
+
+% フォントの設定
+\usepackage[no-math,deluxe,expert,haranoaji]{luatexja-preset}
+\usepackage[T1]{fontenc} 
+\usepackage{alltt,upquote,textcomp} % シングル，バッククォートなどの視認性をアップ！
+\def\textasciigrave{\char0}
+\renewcommand{\kanjifamilydefault}{\gtdefault}  % 日本語フォントをゴシックに
+% \mathversion{bold} % 数式フォントを太字に変更する
+
+% ルビ
+\usepackage{luatexja-ruby}
+
+\usepackage{bbding} % \PencilRightDown 鉛筆マーク
+\usepackage{tikz}
+\usepackage[symbol]{footmisc}
+\usepackage{xcolor,listings}
+\usepackage{multicol}
+\usepackage{xurl}
+\usepackage{graphicx}
+\usepackage{epsfig}
+
+\usepackage{lastpage}
+\usepackage{ascmac}
+%\usepackage{fancybox,fancyvrb,okumacro}
+
+\renewcommand{\lstlistingname}{List} 
+\usepackage[%
+pdfstartview={FitH -32768},%    描画領域の幅に合わせる
+bookmarks=true,%                しおり付き
+bookmarksnumbered=true,%        章や節の番号をふる
+bookmarkstype=toc,%             目次情報のファイル.tocを参照
+colorlinks=true,%              ハイパーリンクを色枠に
+linkcolor=black,%
+urlcolor=black,%
+citecolor=black,%
+filecolor=black,%
+menucolor=black,%
+pagecolor=black,%
+]{hyperref}
+\lstset{%
+	language={Python}, 
+	backgroundcolor={\color[gray]{.95}},%
+	basicstyle={\ttfamily\small},%
+	identifierstyle={\ttfamily\small},
+	commentstyle={\ttfamily\small\color{red}},
+	keywordstyle={\ttfamily\small\color{blue}},
+	ndkeywordstyle={},%
+	stringstyle={\ttfamily\small\color[rgb]{0,0.5,0}},
+	frame={tb},
+	breaklines=true,
+    columns=[l]{fullflexible},
+%	columns=[l]{fixed},%　fixed だと開きすぎ
+	basewidth=0.5em,   % これないと行頭のスペースが揃わない
+	numbers=left,%
+	xrightmargin=0\zw,%
+	xleftmargin=3\zw,%
+	numberstyle={\ttfamily\small},%
+	tabsize=3,
+	stepnumber=1, 
+	numbersep=0.75\zw,%
+	lineskip=-0.3ex,%
+	belowcaptionskip=3pt,   % これないと見出しとリスト本体に隙間が毎回変わる
+	abovecaptionskip=0pt,
+	captionpos=t,
+	showstringspaces=false, % 半角スペースを記号で表示しない
+}
+%
+
+%%%%%%%%%%%% fboxの線幅
+\setlength{\fboxrule}{1.5pt}
+
+
+
+%%%%%%%%%%%% ページフッタの設定 %%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}  % これを入れないと2ページのフッタがずれる
+\renewcommand{\headrulewidth}{0pt} % 水平線を消去
+\renewcommand{\footrulewidth}{0pt} % 水平線を消去
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Verbatim環境にデフォルト値をセット
+\usepackage{fancyvrb}
+\newenvironment{verbatimx}%
+{\small\Verbatim[frame=single,obeytabs,baselinestretch=.65,commandchars=\\\{\}]}%
+{\endVerbatim}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontawesome5}
+\renewcommand{\refname}{文献} % 文献の表記を変更

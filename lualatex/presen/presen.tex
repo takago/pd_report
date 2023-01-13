@@ -1,0 +1,244 @@
+% TEX STUDIO MAGIC-COMMAND
+% !TeX document-id = {21ffa6e2-6c8f-4532-897c-386dc477f19a}
+% !TeX root = presen.tex
+% !TeX encoding = utf8
+% !TeX TXS-program:compile = lualatex -file-line-error -synctex=1 -interaction=nonstopmode -halt-on-error %.tex
+% !TeX TXS-program:quick = txs:///compile | txs:///view-pdf-internal --embedded
+%%%-------------------------------------------------------------------------
+%%% PD3プレゼンプレート
+%%% 作成： 金沢工大・情報工学科・鷹合研究室
+%%%-------------------------------------------------------------------------
+
+\input{tkg_slide.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\lstlistingname}{リスト}
+
+% 図・表・リストのcaption番号を表示するか/表示しないかを選ぶ
+\iffalse
+\usepackage[hang,bf,labelformat = empty,labelsep=none,figurename=Y, tablename=X, singlelinecheck=off,justification=centering,labelfont=bf,textfont=bf]{caption} 
+\else
+\usepackage[hang,bf,labelsep=colon,figurename=図, tablename=表, singlelinecheck=off,justification=centering,labelfont=bf,textfont=bf]{caption} 
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% タイトルスライドのロゴ画像
+% フッタ（左）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  フッタ（左側）
+
+  \MyLogo{\includegraphics[height=1.1cm]{fig/logo/kit_landscape1.pdf}}
+% \MyLogo{--- 鷹合研究室 ---} % トップスライドの下部中央
+
+  \lfoot{\includegraphics[height=.75cm]{fig/logo/kit_landscape1.pdf}}
+% \lfoot{\small 鷹合研}        % フッタ（左）
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% フッタ（中央，右）
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\cfoot{\thepage/\pageref{LastPage}} 
+\cfoot{\thepage/\pageref{LastPage}}
+\rfoot{\small 1EP999} % テーマ番号
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ページ番号を1からにしたら，トップスライドの下部のロゴがうまくいかなくなったのでこうしてみた
+\fancypagestyle{myfirstpage}
+{
+  \fancyhf{}
+   \fancyfoot[C]{\includegraphics[height=1.1cm]{fig/logo/kit_landscape1.pdf}}
+%  \fancyfoot[C]{鷹合研究室}
+   \renewcommand{\headrulewidth}{0pt} % removes horizontal header line
+}
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% ここから下を書き換えて下さい 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{
+{\normalsize 令和98年度 プロジェクトデザインIII}\\\vspace{10mm}
+{\LARGE PDⅢ活動における\\「やるやる詐欺」の傾向と対策}
+}
+\date{令和99年99月99日}
+\author{
+4EP5-05\\ \ruby{織田}{おだ}\ruby{信秀}{のぶひで} \and
+4EP5-15\\ \ruby{織田}{おだ}\ruby{信長}{のぶなが} \and 
+4EP5-22\\ \ruby{織田}{おだ}\ruby{信雄}{のぶかつ}
+}
+
+
+
+\begin{document}
+\maketitle % タイトルページ
+\addtocounter{page}{1}
+\thispagestyle{myfirstpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \foilhead{\Large 1. はじめに -- 背景と目的 -- }
+\begin{itemize}
+ \item 現在，何が問題か（あるいは将来，何が問題になるか）を書く．
+ \item その問題に対処するためには，どのようなものがあればよいか（あるいは取り組みが必要）かを書く．
+ \item 本プロジェクトでは何を使ってどんなものを作っているかを書く．
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 発表の流れ}
+\begin{enumerate}[itemsep=0.25\zh]
+	\item \textcolor{gray}{はじめに -- 背景と目的 --}
+	\item システム概要
+	\item 評価
+	\item むすび
+    \item \url{http://www.fujitsu.co.jp}
+\end{enumerate}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 2. システム概要}
+
+ここにブロック図をいれシステム全体を解説する．ドローンや車両などを開発した場合は，その写真も示す．
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{fig/system.pdf}
+\caption{あああああああ}
+\end{center}
+\end{figure}
+\newpage
+
+%%%%%%%%%%%%%%% minipage の利用例 %%%%%%%%%%%%%%%%%%%
+%------ 左側
+\begin{minipage}[t]{0.4\textwidth}\vspace{0pt}
+あああああああああああああああああああああああああああああああああああああああああああああああああああああああああいゆえお．
+\begin{itemize}[parsep=-0.5\zh]
+	\item いいいいいいいいいいいいいいいいい
+	\item うううううううううううううううううう
+	\item えええええええええええええええええええええええええ
+\end{itemize}
+\end{minipage}
+%------ 右側
+\begin{minipage}[t]{0.6\textwidth}\vspace{0pt}
+\begin{center}
+\includegraphics[keepaspectratio, width=.9\linewidth,trim={100mm 0mm 0mm 15mm},clip]{fig/system.pdf}
+\end{center}
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 2-1. 畳み込みニューラルネットワークの構造}
+\begin{description}
+	\item[①入力層]~\\
+	ああああああああああああああああああああああいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいうううううううううううううううう
+	\item[②中間層]~\\
+	ああああああああああああああああああああああいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいうううううううううううううううう
+	\item[③出力層]~\\
+	あああああああ\textcolor{red}{ああああああああ}あああああ
+	\begin{enumerate}
+		\item 巧言令色，鮮なし仁
+		\item 後生畏可し，焉んぞ来者の今に，如かざるを知らんや．
+	\end{enumerate}
+\end{description}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 2-2. ○○○○○処理の方法}
+\begin{description} 
+	\item[①Javascript]~\\
+	ああああああああああああああああああああああいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいうううううううううううううううう
+	\item[②Python+Tornado]~\\
+	ああああああああああああああああああああああいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいうううううううううううううううう
+	\item[③pigpio]~\\
+	ああああああああああああああああああああああいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいうううううううううううううううう
+\end{description}
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 3. 評価・考察}
+\begin{itemize}
+	\item このスライドでは何をどのような方法で評価したかを明記し，結果をグラフで示すこと（表よりグラフのほうが良い）．
+	\item システムが動いている様子がわかるようにデモ映像を流すこと（デモ映像には字幕をつけたりするなどしてわかりやすくすること）．
+	\item 評価の際は，改良の前後でどうなったかを示す．あるいは他の手法などと比較してどうなのかを示すことも必要．
+	\item 結果について考察も示すこと．
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\foilhead{\Large 4. むすび}\label{MUSUBI}
+\begin{itemize}
+	\item 何のために何を作成したかを改めて書く．
+	\item 現時点での評価結果，考察を簡潔に書く．
+	\item 来月の報告までに何をするか計画を書く．
+\end{itemize}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ここからおまけ
+
+\href{run:./demo002.mp4}{\textcolor[hsb]{0.0, 0.7, 1.0}{\faPlayCircle[regular]}} PDFファイルと同じフォルダにdemo002.mp4があれば再生できる．
+
+
+\href{https://youtu.be/74agBeJxdFI}{\textcolor{red}{\faYoutube}} YOUTUBEで再生
+
+\textcolor{red}{\faYoutube}\href{https://youtu.be/74agBeJxdFI}{~\url{https://youtu.be/74agBeJxdFI}}
+
+\lstinputlisting[language=c, caption=test2.c]{src/hello.c}
+\lstinputlisting[language=python, caption=test2.py]{src/world.py}
+
+% 色定義
+\definecolor{mygray}{gray}{0.95}
+\definecolor{mypink1}{hsb}{0.0, 0.188, 1.0}
+UNIXv1におけるタスク切り替えが行われるタイミング
+
+%%%%%%%%%%%%%%%%%%%%%%%%55
+\colorbox{mygray}{\begin{minipage}{\textwidth}
+① みなさん
+\end{minipage}}
+
+\colorbox{mygray}{\begin{minipage}{\textwidth}
+② こんにちは 
+\begin{itemize}
+\item まんじゅう
+\item りんご
+\end{itemize}
+\end{minipage}}
+
+\colorbox{mypink1}{\begin{minipage}{\textwidth}
+③ お元気で\\
+またあうひまで
+\end{minipage}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{verbatimx}
+$ gcc test.c \return
+ (*_*)
+ (*_*)
+        \textcolor{red}{ここで\keytop{CTL}+\keytop{C}を押す}
+\end{verbatimx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+~\\
+\noindent\textbf{謝辞}~~本研究はJSPS科研費21Kxxxxxxxxx助成を受けた
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 参考文献 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{99}
+\small
+\setlength\itemsep{-0.5\zh}%
+\bibitem{book1} K.Thompson，D.M.Ritchie，\textbf{"The UNIX Time-Sharing System"}，Communications of the ACM, Vol.17, No.7, 1974.
+\bibitem{book4} Digital Equipment Corporation: \textbf{PDP11/20-15-r20 Processor Handbook}, 1971.
+\bibitem{Preliminary} T.R. Bashkow, \textbf{"Study of UNIX: Preliminary Release of Unix Implementation Document"}, \url{ http://minnie.tuhs.org/Archive/Distributions/Research/Dennis_v1/PreliminaryUnixImplementationDocument_Jun72.pdf}, Jun. 1972.
+%\bibitem{book2} K. Thompson，D.M. Ritchie，"UNIX PROGRAMER'S MANUAL"，Nov. 1971.
+%\bibitem{web0} Warren Toomey, "The Unix Heritage Society", \url{https://www.tuhs.org/}, Dec. 2015.
+\bibitem{simh} simh, \textbf{"The Computer History Simulation Project"}, \url{https://github.com/simh/simh}, 参照Mar.14, 2022.
+\bibitem{ref0} W.Toomey, \textbf{"First Edition Unix: Its Creation and Restoration"}, IEEE Annals of the History of Computing, 32 (3), pp.74-82, 2010.
+%\bibitem{web1} Jim Huang, "Restoration of 1st Edition UNIX from Bell Laboratories", \url{https://github.com/jserv/unix-v1}, 参照Mar.14, 2022.
+\bibitem{book3} Diomidis.Spinellis，\textbf{"unix-history-repo"},  \url{https://github.com/dspinellis/unix-history-repo/tree/Research-V1}, 参照Mar.14, 2022.
+\bibitem{book5} Digital Equipment Copporation: \textbf{PDP11 Peripherals HandBook}, 1972.
+%\bibitem{book6} \url{https://github.com/No000/unix-v1-utils}
+%\bibitem{book7} \url{https://github.com/No000/UnixV1-SystemCallTracer}
+\end{thebibliography}
+
+\end{document} 
