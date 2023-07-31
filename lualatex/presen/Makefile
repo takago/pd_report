@@ -11,6 +11,7 @@ kitlogo:
 
 typeset:
 	lualatex -file-line-error -synctex=1 -interaction=nonstopmode -halt-on-error presen.tex
+	lualatex -file-line-error -synctex=1 -interaction=nonstopmode -halt-on-error presen.tex
 
 handout: presen.pdf
 	pdfjam --scale 0.96 --frame true --no-landscape --nup ${NUP} presen.pdf -o handout-10up.pdf
