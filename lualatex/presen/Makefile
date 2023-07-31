@@ -7,7 +7,7 @@ all: typeset
 kitlogo:
 	mkdir -p fig/logo
 	wget --no-proxy http://mercury.kanazawa-it.ac.jp/koho/kitlogo/img/eps/kit_landscape1.eps -O fig/logo/kit_landscape1.eps
-	epspdf -O fig/logo/kit_landscape1.eps
+	epspdf fig/logo/kit_landscape1.eps
 
 typeset:
 	lualatex -file-line-error -synctex=1 -interaction=nonstopmode -halt-on-error presen.tex
