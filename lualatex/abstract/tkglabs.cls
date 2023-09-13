@@ -28,6 +28,7 @@
 \usepackage{arydshln} % 表における点線
 \renewcommand{\baselinestretch}{0.75} % 行間のつめ具合
 \usepackage{xurl}      % 折り返しできるURLの挿入
+\urlstyle{same} % URLのフォントを本文のフォントに合わせる
 \usepackage{setspace} % 部分的に行間を変える
 
 % ここまで -----------------------------------------------------------------
@@ -117,7 +118,7 @@
 %                      documentの開始と終わりの変更
 %ここから ------------------------------------------------------------------
 \AtBeginDocument{
-  \thispagestyle{empty} % 最初のページはヘッダを使わない%  
+  \thispagestyle{empty} % 最初のページはヘッダを使わない%
 }
 \AtEndDocument{
 }
@@ -129,11 +130,11 @@
 \renewcommand{\maketitle}{
 %%%% プロジェクトテーマ，プロジェクトメンバーなどの表
 \null\vspace{-8mm}
-\begin{table*}[h] 
+\begin{table*}[h]
 \noindent
 \begin{spacing}{0.8}
 \begin{tabular}{|p{1.75cm};{1pt/1pt}p{1.48cm}|}\hline \hfil\scalebox{0.8}{テーマ番号} \hfil& \hfil\small \THEMEID\hfil\\\hline\end{tabular}
-\newline 
+\newline
 \vspace{-10\lineskip} % プロジェクトテーマ番号の箱の位置（要調整）
 \newline
 \noindent
@@ -142,7 +143,7 @@
  \multirow{\CENTERADJ}{*}{\begin{minipage}[c]{1.75cm}\begin{center}
 \scalebox{0.8}{プロジェクト}\\\scalebox{0.8}{テーマ}
 \end{center}\end{minipage}}  &
-\begin{minipage}[c]{0.4cm}\scalebox{0.7}{和文}\end{minipage} &\begin{minipage}{8.6cm}\vspace{1mm}\TITLEJP\vspace{1mm}\end{minipage} & 
+\begin{minipage}[c]{0.4cm}\scalebox{0.7}{和文}\end{minipage} &\begin{minipage}{8.6cm}\vspace{1mm}\TITLEJP\vspace{1mm}\end{minipage} &
  \multirow{\CENTERADJ}{*}{\begin{minipage}[c]{1.3cm}\begin{center}
 \scalebox{0.8}{指導教員}
 \end{center}\end{minipage}} & \multirow{\CENTERADJ}{*}{\scalebox{0.9}\PROFNAME} \\
@@ -158,12 +159,12 @@
 \end{spacing}
 
 %%%% アブストラクト（行間は狭めに）
-\vspace{5mm}\noindent 
+\vspace{5mm}\noindent
 \begin{spacing}{0.6}
 \textbf{Abstract}\hspace{3mm} {\small\ABSTRACT}
 \end{spacing}
 
-%%%% キーワード 
+%%%% キーワード
 \vspace{5mm}\noindent \textbf{Keywords}\hspace{3mm}  \small\KEYWORDS
 \end{table*}
 \vspace{-5mm}
