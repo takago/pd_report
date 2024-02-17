@@ -10,18 +10,76 @@
 \usepackage[top=15truemm,bottom=22truemm,left=15truemm,right=15truemm,paperwidth=320truemm,paperheight=180truemm]{geometry}
 
 
-
 % 箇条書き環境の余白設定
 \usepackage[shortlabels]{enumitem}
 \setlist[description]{topsep=3mm,parsep=0mm,partopsep=0mm,itemsep=.5\zh,leftmargin=2\zw,labelsep=.5\zw}
 \setlist[enumerate]{topsep=3mm,parsep=0mm,partopsep=0mm,itemsep=.5\zh,leftmargin=2\zw,labelsep=.5\zw}
 \setlist[itemize]{topsep=3mm,parsep=0mm,partopsep=0mm,itemsep=.5\zh,leftmargin=2\zw,labelsep=.5\zw}
 
+
+%%%%%%%%%%%%%%%%%%
+% フォントの設定
+%%%%%%%%%%%%%%%%%%
+\usepackage[no-math,deluxe,expert,haranoaji]{luatexja-preset}
+
+\iftrue % 全体的に細身のフォントが良いとき
+%\iffalse  % 太めのフォントが良いとき
+\setmainfont[BoldFont=HaranoAjiMincho-Bold]{HaranoAjiMincho-Light}
+\setsansfont[BoldFont=HaranoAjiGothic-Medium]{HaranoAjiGothic-Light}
+\setmainjfont[BoldFont=HaranoAjiMincho-Bold]{HaranoAjiMincho-Light}
+\setsansjfont[BoldFont=HaranoAjiGothic-Medium]{HaranoAjiGothic-Light}
+\else
+\setmainfont[BoldFont=HaranoAjiMincho-Bold]{HaranoAjiMincho-Regular}
+\setsansfont[BoldFont=HaranoAjiGothic-Bold]{HaranoAjiGothic-Regular}
+\setmainjfont[BoldFont=HaranoAjiMincho-Bold]{HaranoAjiMincho-Regular}
+\setsansjfont[BoldFont=HaranoAjiGothic-Bold]{HaranoAjiGothic-Regular}
+\fi
+
+\setmonofont{Inconsolata}  % urlやverbatim,listingsなどの欧文フォント
+
+\renewcommand{\kanjifamilydefault}{\gtdefault}  % 日本語フォントをゴシックに
+\renewcommand*\familydefault{\sfdefault}
+%\mathversion{bold} % 数式フォントを太字に変更する
+
+\usepackage{alltt,upquote,textcomp} % シングル，バッククォートなどの視認性をアップ！
+\def\textasciigrave{\char0}
+
+% このパッケージを入れないと verbatim の日本語が何故かゴシックにならない
+\usepackage{verbatim}% 
+
+
+%%%%%%%%%%%%%%%%%%
+% PDFの設定
+%%%%%%%%%%%%%%%%%%
+
+\usepackage[%
+pdfstartview={FitH -32768},%    描画領域の幅に合わせる
+bookmarks=true,%                しおり付き
+bookmarksnumbered=true,%        章や節の番号をふる
+bookmarkstype=toc,%             目次情報のファイル.tocを参照
+colorlinks=true,%              ハイパーリンクを色枠に
+linkcolor=black,%
+urlcolor=black,%
+citecolor=black,%
+filecolor=black,%
+menucolor=black,%
+pagecolor=black,%
+pdftitle={プロジェクトデザイン3},
+pdfsubject={},
+pdfauthor={鷹合研究室},
+pdfkeywords={},
+dvipdfmx-outline-open %%%%%%%%%%%%%%% これがあるとBookmarkを自動的に展開されるみたい・・・
+]{hyperref}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% ここから下は書き換えない
+% ここから下は必要がない限り書き換えない
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%% ブックマークを表示
+\usepackage{bookmark}
 
 % スライドの見出しの位置
 \setlength{\foilheadskip}{-14mm}
@@ -29,13 +87,6 @@
 % スライドなので字下げしない
 \setlength{\parindent}{0mm}
 
-% フォントの設定
-\usepackage[no-math,deluxe,expert,haranoaji]{luatexja-preset}
-\usepackage[T1]{fontenc} 
-\usepackage{alltt,upquote,textcomp} % シングル，バッククォートなどの視認性をアップ！
-\def\textasciigrave{\char0}
-\renewcommand{\kanjifamilydefault}{\gtdefault}  % 日本語フォントをゴシックに
-% \mathversion{bold} % 数式フォントを太字に変更する
 
 % ルビ
 \usepackage{luatexja-ruby}
@@ -54,19 +105,7 @@
 %\usepackage{fancybox,fancyvrb,okumacro}
 
 \renewcommand{\lstlistingname}{List} 
-\usepackage[%
-pdfstartview={FitH -32768},%    描画領域の幅に合わせる
-bookmarks=true,%                しおり付き
-bookmarksnumbered=true,%        章や節の番号をふる
-bookmarkstype=toc,%             目次情報のファイル.tocを参照
-colorlinks=true,%              ハイパーリンクを色枠に
-linkcolor=black,%
-urlcolor=black,%
-citecolor=black,%
-filecolor=black,%
-menucolor=black,%
-pagecolor=black,%
-]{hyperref}
+
 \lstset{%
 	language={Python}, 
 	backgroundcolor={\color[gray]{.95}},%
@@ -78,8 +117,8 @@ pagecolor=black,%
 	stringstyle={\ttfamily\small\color[rgb]{0,0.5,0}},
 	frame={tb},
 	breaklines=true,
-    columns=[l]{fullflexible},
-%	columns=[l]{fixed},%　fixed だと開きすぎ
+	columns=[l]{fullflexible},
+	%	columns=[l]{fixed},%　fixed だと開きすぎ
 	basewidth=0.5em,   % これないと行頭のスペースが揃わない
 	numbers=left,%
 	xrightmargin=0\zw,%
@@ -115,6 +154,13 @@ pagecolor=black,%
 \newenvironment{verbatimx}%
 {\small\Verbatim[frame=single,obeytabs,baselinestretch=.65,commandchars=\\\{\}]}%
 {\endVerbatim}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Verbatim環境にデフォルト値をセット
+\newenvironment{myVerbatim}%
+{\vspace{-8mm}\Verbatim[frame=single,obeytabs,framesep=2mm,baselinestretch=.7,commandchars=\\\{\}]}%
+{\endVerbatim}%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fontawesome5}
